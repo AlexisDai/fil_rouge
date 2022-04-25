@@ -1,0 +1,18 @@
+id_pro          INT AUTO-INCREMENT  Numéro d'identification du produit
+lib_cou_pro     varchar(255)        Libellé court du produit
+lib_lon_pro     varchar(255)        Libellé long du produit
+ref_fou_pro     varchar(255)        Référence fournisseur du produit
+pri_ach_pro     DECIMAL(19,4)       Prix d'achat du produit
+pho_pro         varchar(255)        Photo du produit
+pri_ht_pro      DECIMAL(19,4)       Prix hors taxes du produit
+pri_ven_pro     DECIMAL(19,4)       Prix de vente du produit (HT+Coefficient)
+coe_cli         DECIMAL(5,2)        Coefficient du client
+cat_cli         varchar(255)        Catégorie du client
+red_cli         DECIMAL(5,2)        Réduction client
+adr_liv_cli     varchar(255)        Adresse de livraison du client
+adr_fac_cli     varchar(255)        Adresse de facturation du client
+mod_pai_cli     varchar(255)        Mode de paiement du client
+id_cli          INT AUTO-INCREMENT  Numéro d'identification du client
+id_com          INT AUTO-INCREMENT  Numéro d'identification du commercial
+nom_com         varchar(255)        Nom du commercial
+pre_com         varchar(255)        Prénom du commercial
