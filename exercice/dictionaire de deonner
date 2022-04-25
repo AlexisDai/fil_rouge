@@ -1,7 +1,0 @@
-
-nom_plage                varchar(225)
-nom_ville                varchar(225)
-longeur_plage            varchar(5,2)
-nom_responsable          varchar(255)
-prenom_responsable       varchar(225)
-code_postale             varchar(5)
