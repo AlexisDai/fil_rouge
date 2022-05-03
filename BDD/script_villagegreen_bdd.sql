@@ -32,7 +32,7 @@ CREATE TABLE Commercial(
 );
 
 CREATE TABLE Catalogue(
-   id_cat INT AUTO_INCREMENT NOT NULL ,
+   id_cat INT NOT NULL ,
    sto_cat INT NOT NULL ,
    nvx_pro_cat VARCHAR(255) DEFAULT NULL ,
    des_pro_cat VARCHAR(255) DEFAULT NULL ,
@@ -75,6 +75,7 @@ CREATE TABLE Facture(
    dat_fac DATE NOT NULL ,
    id_cli INT NOT NULL,
    id_cmd INT NOT NULL,
+   adr_fac varchar(255) not null,
    PRIMARY KEY(id_fac),
    FOREIGN KEY(id_cli) REFERENCES Client(id_cli),
    FOREIGN KEY(id_cmd) REFERENCES Commande(id_cmd)
@@ -99,14 +100,12 @@ CREATE TABLE Produit(
    pri_ht_pro DECIMAL(19,4) NOT NULL ,
    ctg_pro VARCHAR(255) NOT NULL ,
    id_rub INT NOT NULL ,
-   id_liv INT NOT NULL ,
+   id_liv INT DEFAULT NULL ,
    id_fou INT NOT NULL ,
-   id_cat INT NOT NULL ,
    PRIMARY KEY(id_pro),
    FOREIGN KEY(id_rub) REFERENCES Rubrique(id_rub),
    FOREIGN KEY(id_liv) REFERENCES Livraison(id_liv),
    FOREIGN KEY(id_fou) REFERENCES Fournisseur(id_fou),
-   FOREIGN KEY(id_cat) REFERENCES Catalogue(id_cat)
 );
 CREATE INDEX nom_pro ON Produit(lib_cou_pro);
 
