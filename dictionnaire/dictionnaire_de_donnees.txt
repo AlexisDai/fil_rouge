@@ -36,9 +36,6 @@ nvx_pro_cat     varchar(255)            Noms des nouveaux produits
 des_pro_cat     varchar(255)            Noms des produits désactivés
 
 
-id_equ          INT AUTO-INCREMENT      Numéro d'identification de l'équipe
-
-
 id_fac          INT AUTO-INCREMENT      Numéro d'dentification de la facture
 dat_fac         DATE                    Date de la facture
 
@@ -54,7 +51,11 @@ adr_liv_cmd     varchar(255)            Adresse de la livraison de la commande
 adr_fac_cmd     varchar(255)            Adresse de la facturation de la commande
 tot_cmd         DECIMAL(19,4)           Prix total de la commande
 
+id_rub          INT AUTO_INCREMENT      Numéro d'identification de la rubrique
+nom_rub         VARCHAR(255)            Nom de la rubrique
+
 
 qte_art         INT                     Quantité d'article dans la commande
 pri_ven         DECIMAL(19,4)           Prix de vente du produit (HT+Coefficient)
 tva_pro         DECIMAL(5,2)            TVA appliquée au produit
+
