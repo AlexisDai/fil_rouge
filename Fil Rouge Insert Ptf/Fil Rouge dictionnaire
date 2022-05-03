@@ -1,0 +1,58 @@
+            Table Client
+
+id_client                           INT 
+nom_client                          VARCHAR(255)
+prenom_client                       VARCHAR(255)
+adresse_mail_client                 VARCHAR(255)
+mot_de_passe_client                 VARCHAR(255)
+mot_de_passe_confirmation_client    VARCHAR(255)    
+date_de_naissance_client            DATE
+ville_client                        VARCHAR(255)
+code_postal_client                  VARCHAR(5)
+
+
+            Table Catalogue
+
+id_produit                          INT
+nom_produit                         VARCHAR(255)
+prix_produit                        EURO
+stock_produit                       INT
+description_produit                 VARCHAR(5000)
+avis_produit                        VARCHAR(5000)
+note_produit                        DECIMAL
+img_produit                         LIBRE
+
+
+            Table 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
