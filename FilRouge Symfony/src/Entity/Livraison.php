@@ -22,28 +22,28 @@ class Livraison
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $adresseLivraison;
+    private $adresse;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $cpLivraison;
+    private $cp;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $villeLivraison;
+    private $ville;
 
     /**
      * @ORM\Column(type="date")
      */
-    private $dateLivraison;
+    private $date;
 
     /**
      * @ORM\ManyToOne(targetEntity=Commande::class, inversedBy="livraisons")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $idCommande;
+    private $commande;
 
     /**
      * @ORM\OneToMany(targetEntity=LivraisonProduit::class, mappedBy="idLivraison")
@@ -55,67 +55,74 @@ class Livraison
         $this->livraisonProduits = new ArrayCollection();
     }
 
+
+    public function setId(int $id):self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getAdresseLivraison(): ?string
+    public function getAdresse(): ?string
     {
-        return $this->adresseLivraison;
+        return $this->adresse;
     }
 
-    public function setAdresseLivraison(string $adresseLivraison): self
+    public function setAdresse(string $adresseLivraison): self
     {
-        $this->adresseLivraison = $adresseLivraison;
+        $this->adresse = $adresseLivraison;
 
         return $this;
     }
 
-    public function getCpLivraison(): ?string
+    public function getCp(): ?string
     {
-        return $this->cpLivraison;
+        return $this->cp;
     }
 
-    public function setCpLivraison(string $cpLivraison): self
+    public function setCp(string $cpLivraison): self
     {
-        $this->cpLivraison = $cpLivraison;
+        $this->cp = $cpLivraison;
 
         return $this;
     }
 
-    public function getVilleLivraison(): ?string
+    public function getVille(): ?string
     {
-        return $this->villeLivraison;
+        return $this->ville;
     }
 
-    public function setVilleLivraison(string $villeLivraison): self
+    public function setVille(string $villeLivraison): self
     {
-        $this->villeLivraison = $villeLivraison;
+        $this->ville = $villeLivraison;
 
         return $this;
     }
 
-    public function getDateLivraison(): ?\DateTimeInterface
+    public function getDate(): ?\DateTimeInterface
     {
-        return $this->dateLivraison;
+        return $this->date;
     }
 
-    public function setDateLivraison(\DateTimeInterface $dateLivraison): self
+    public function setDate(\DateTimeInterface $dateLivraison): self
     {
-        $this->dateLivraison = $dateLivraison;
+        $this->date = $dateLivraison;
 
         return $this;
     }
 
-    public function getIdCommande(): ?Commande
+    public function getCommande(): ?Commande
     {
-        return $this->idCommande;
+        return $this->commande;
     }
 
-    public function setIdCommande(?Commande $idCommande): self
+    public function setCommande(?Commande $idCommande): self
     {
-        $this->idCommande = $idCommande;
+        $this->commande = $idCommande;
 
         return $this;
     }
@@ -132,7 +139,7 @@ class Livraison
     {
         if (!$this->livraisonProduits->contains($livraisonProduit)) {
             $this->livraisonProduits[] = $livraisonProduit;
-            $livraisonProduit->setIdLivraison($this);
+            $livraisonProduit->setLivraison($this);
         }
 
         return $this;
@@ -142,8 +149,8 @@ class Livraison
     {
         if ($this->livraisonProduits->removeElement($livraisonProduit)) {
             // set the owning side to null (unless already changed)
-            if ($livraisonProduit->getIdLivraison() === $this) {
-                $livraisonProduit->setIdLivraison(null);
+            if ($livraisonProduit->getLivraison() === $this) {
+                $livraisonProduit->setLivraison(null);
             }
         }
 

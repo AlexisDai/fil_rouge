@@ -22,81 +22,91 @@ class Client
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $categorieClient;
+    private $categorie;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $adresseLivraisonClient;
+    private $adresseLivraison;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $cpLivraisonClient;
+    private $cpLivraison;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $villeLivraisonClient;
+    private $villeLivraison;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $adresseFactureClient;
+    private $adresseFacture;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $cpFactureClient;
+    private $cpFacture;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $villeFactureClient;
+    private $villeFacture;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $modePaiementClient;
+    private $modePaiement;
 
     /**
      * @ORM\Column(type="decimal", precision=5, scale=2, nullable=true)
      */
-    private $reductionClient;
+    private $reduction;
 
     /**
      * @ORM\Column(type="decimal", precision=5, scale=2)
      */
-    private $coefficientClient;
+    private $coefficient;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $numeroSiretClient;
+    private $numeroSiret;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nomClient;
+    private $nom;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $prenomClient;
+    private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $nomEntrepriseClient;
+    private $nomEntreprise;
+
 
     /**
-     * @ORM\ManyToMany(targetEntity=Commercial::class)
+     * @ORM\OneToMany(targetEntity=Commande::class, mappedBy="client")
      */
-    private $commercial;
+    private $commandes;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Commercial::class, mappedBy="client")
+     */
+    private $commercials;
+
+
 
     public function __construct()
     {
         $this->commercial = new ArrayCollection();
+        $this->commandes = new ArrayCollection();
+        $this->commercials = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -112,170 +122,201 @@ class Client
 
     }
 
-    public function getCategorieClient(): ?string
+    public function getCategorie(): ?string
     {
-        return $this->categorieClient;
+        return $this->categorie;
     }
 
-    public function setCategorieClient(string $categorieClient): self
+    public function setCategorie(string $categorieClient): self
     {
-        $this->categorieClient = $categorieClient;
+        $this->categorie = $categorieClient;
 
         return $this;
     }
 
-    public function getAdresseLivraisonClient(): ?string
+    public function getAdresseLivraison(): ?string
     {
-        return $this->adresseLivraisonClient;
+        return $this->adresseLivraison;
     }
 
-    public function setAdresseLivraisonClient(string $adresseLivraisonClient): self
+    public function setAdresseLivraison(string $adresseLivraisonClient): self
     {
-        $this->adresseLivraisonClient = $adresseLivraisonClient;
+        $this->adresseLivraison = $adresseLivraisonClient;
 
         return $this;
     }
 
-    public function getCpLivraisonClient(): ?string
+    public function getCpLivraison(): ?string
     {
-        return $this->cpLivraisonClient;
+        return $this->cpLivraison;
     }
 
-    public function setCpLivraisonClient(string $cpLivraisonClient): self
+    public function setCpLivraison(string $cpLivraisonClient): self
     {
-        $this->cpLivraisonClient = $cpLivraisonClient;
+        $this->cpLivraison = $cpLivraisonClient;
 
         return $this;
     }
 
-    public function getVilleLivraisonClient(): ?string
+    public function getVilleLivraison(): ?string
     {
-        return $this->villeLivraisonClient;
+        return $this->villeLivraison;
     }
 
-    public function setVilleLivraisonClient(string $villeLivraisonClient): self
+    public function setVilleLivraison(string $villeLivraisonClient): self
     {
-        $this->villeLivraisonClient = $villeLivraisonClient;
+        $this->villeLivraison = $villeLivraisonClient;
 
         return $this;
     }
 
-    public function getAdresseFactureClient(): ?string
+    public function getAdresseFacture(): ?string
     {
-        return $this->adresseFactureClient;
+        return $this->adresseFacture;
     }
 
-    public function setAdresseFactureClient(string $adresseFactureClient): self
+    public function setAdresseFacture(string $adresseFactureClient): self
     {
-        $this->adresseFactureClient = $adresseFactureClient;
+        $this->adresseFacture = $adresseFactureClient;
 
         return $this;
     }
 
-    public function getCpFactureClient(): ?string
+    public function getCpFacture(): ?string
     {
-        return $this->cpFactureClient;
+        return $this->cpFacture;
     }
 
-    public function setCpFactureClient(string $cpFactureClient): self
+    public function setCpFacture(string $cpFactureClient): self
     {
-        $this->cpFactureClient = $cpFactureClient;
+        $this->cpFacture = $cpFactureClient;
 
         return $this;
     }
 
-    public function getVilleFactureClient(): ?string
+    public function getVilleFacture(): ?string
     {
-        return $this->villeFactureClient;
+        return $this->villeFacture;
     }
 
-    public function setVilleFactureClient(string $villeFactureClient): self
+    public function setVilleFacture(string $villeFactureClient): self
     {
-        $this->villeFactureClient = $villeFactureClient;
+        $this->villeFacture = $villeFactureClient;
 
         return $this;
     }
 
-    public function getModePaiementClient(): ?string
+    public function getModePaiement(): ?string
     {
-        return $this->modePaiementClient;
+        return $this->modePaiement;
     }
 
-    public function setModePaiementClient(string $modePaiementClient): self
+    public function setModePaiement(string $modePaiementClient): self
     {
-        $this->modePaiementClient = $modePaiementClient;
+        $this->modePaiement = $modePaiementClient;
 
         return $this;
     }
 
-    public function getReductionClient(): ?string
+    public function getReduction(): ?string
     {
-        return $this->reductionClient;
+        return $this->reduction;
     }
 
-    public function setReductionClient(string $reductionClient): self
+    public function setReduction(string $reductionClient): self
     {
-        $this->reductionClient = $reductionClient;
+        $this->reduction = $reductionClient;
 
         return $this;
     }
 
-    public function getCoefficientClient(): ?string
+    public function getCoefficient(): ?string
     {
-        return $this->coefficientClient;
+        return $this->coefficient;
     }
 
-    public function setCoefficientClient(string $coefficientClient): self
+    public function setCoefficient(string $coefficientClient): self
     {
-        $this->coefficientClient = $coefficientClient;
+        $this->coefficient = $coefficientClient;
 
         return $this;
     }
 
-    public function getNumeroSiretClient(): ?string
+    public function getNumeroSiret(): ?string
     {
-        return $this->numeroSiretClient;
+        return $this->numeroSiret;
     }
 
-    public function setNumeroSiretClient(?string $numeroSiretClient): self
+    public function setNumeroSiret(?string $numeroSiretClient): self
     {
-        $this->numeroSiretClient = $numeroSiretClient;
+        $this->numeroSiret = $numeroSiretClient;
 
         return $this;
     }
 
-    public function getNomClient(): ?string
+    public function getNom(): ?string
     {
-        return $this->nomClient;
+        return $this->nom;
     }
 
-    public function setNomClient(string $nomClient): self
+    public function setNom(string $nomClient): self
     {
-        $this->nomClient = $nomClient;
+        $this->nom = $nomClient;
 
         return $this;
     }
 
-    public function getPrenomClient(): ?string
+    public function getPrenom(): ?string
     {
-        return $this->prenomClient;
+        return $this->prenom;
     }
 
-    public function setPrenomClient(string $prenomClient): self
+    public function setPrenom(string $prenomClient): self
     {
-        $this->prenomClient = $prenomClient;
+        $this->prenom = $prenomClient;
 
         return $this;
     }
 
-    public function getNomEntrepriseClient(): ?string
+    public function getNomEntreprise(): ?string
     {
-        return $this->nomEntrepriseClient;
+        return $this->nomEntreprise;
     }
 
-    public function setNomEntrepriseClient(?string $nomEntrepriseClient): self
+    public function setNomEntreprise(?string $nomEntrepriseClient): self
     {
-        $this->nomEntrepriseClient = $nomEntrepriseClient;
+        $this->nomEntreprise = $nomEntrepriseClient;
+
+        return $this;
+    }
+
+
+    /**
+     * @return Collection<int, Commande>
+     */
+    public function getCommandes(): Collection
+    {
+        return $this->commandes;
+    }
+
+    public function addCommande(Commande $commande): self
+    {
+        if (!$this->commandes->contains($commande)) {
+            $this->commandes[] = $commande;
+            $commande->setClient($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommande(Commande $commande): self
+    {
+        if ($this->commandes->removeElement($commande)) {
+            // set the owning side to null (unless already changed)
+            if ($commande->getClient() === $this) {
+                $commande->setClient(null);
+            }
+        }
 
         return $this;
     }
@@ -283,24 +324,29 @@ class Client
     /**
      * @return Collection<int, Commercial>
      */
-    public function getCommercial(): Collection
+    public function getCommercials(): Collection
     {
-        return $this->commercial;
+        return $this->commercials;
     }
 
-    public function addCommercial(Commercial $idCommercial): self
+    public function addCommercial(Commercial $commercial): self
     {
-        if (!$this->commercial->contains($idCommercial)) {
-            $this->commercial[] = $idCommercial;
+        if (!$this->commercials->contains($commercial)) {
+            $this->commercials[] = $commercial;
+            $commercial->addClient($this);
         }
 
         return $this;
     }
 
-    public function removeCommercial(Commercial $idCommercial): self
+    public function removeCommercial(Commercial $commercial): self
     {
-        $this->commercial->removeElement($idCommercial);
+        if ($this->commercials->removeElement($commercial)) {
+            $commercial->removeClient($this);
+        }
 
         return $this;
     }
+
+   
 }

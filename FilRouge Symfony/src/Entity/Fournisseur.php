@@ -22,32 +22,32 @@ class Fournisseur
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nomFournisseur;
+    private $nom;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $adresseFournisseur;
+    private $adresse;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $cpFournisseur;
+    private $cp;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $villeFournisseur;
+    private $ville;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $emailFournisseur;
+    private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $telephoneFournisseur;
+    private $telephone;
 
     /**
      * @ORM\OneToMany(targetEntity=Produit::class, mappedBy="idFournisseur")
@@ -59,79 +59,88 @@ class Fournisseur
         $this->produits = new ArrayCollection();
     }
 
+    public function setId(INT $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNomFournisseur(): ?string
+
+
+    public function getNom(): ?string
     {
-        return $this->nomFournisseur;
+        return $this->nom;
     }
 
-    public function setNomFournisseur(string $nomFournisseur): self
+    public function setNom(string $nomFournisseur): self
     {
-        $this->nomFournisseur = $nomFournisseur;
+        $this->nom = $nomFournisseur;
 
         return $this;
     }
 
-    public function getAdresseFournisseur(): ?string
+    public function getAdresse(): ?string
     {
-        return $this->adresseFournisseur;
+        return $this->adresse;
     }
 
-    public function setAdresseFournisseur(string $adresseFournisseur): self
+    public function setAdresse(string $adresseFournisseur): self
     {
-        $this->adresseFournisseur = $adresseFournisseur;
+        $this->adresse = $adresseFournisseur;
 
         return $this;
     }
 
-    public function getCpFournisseur(): ?string
+    public function getCp(): ?string
     {
-        return $this->cpFournisseur;
+        return $this->cp;
     }
 
-    public function setCpFournisseur(string $cpFournisseur): self
+    public function setCp(string $cpFournisseur): self
     {
-        $this->cpFournisseur = $cpFournisseur;
+        $this->cp = $cpFournisseur;
 
         return $this;
     }
 
-    public function getVilleFournisseur(): ?string
+    public function getVille(): ?string
     {
-        return $this->villeFournisseur;
+        return $this->ville;
     }
 
-    public function setVilleFournisseur(string $villeFournisseur): self
+    public function setVille(string $villeFournisseur): self
     {
-        $this->villeFournisseur = $villeFournisseur;
+        $this->ville = $villeFournisseur;
 
         return $this;
     }
 
-    public function getEmailFournisseur(): ?string
+    public function getEmail(): ?string
     {
-        return $this->emailFournisseur;
+        return $this->email;
     }
 
-    public function setEmailFournisseur(string $emailFournisseur): self
+    public function setEmail(string $emailFournisseur): self
     {
-        $this->emailFournisseur = $emailFournisseur;
+        $this->email = $emailFournisseur;
 
         return $this;
     }
 
-    public function getTelephoneFournisseur(): ?string
+    public function getTelephone(): ?string
     {
-        return $this->telephoneFournisseur;
+        return $this->telephone;
     }
 
-    public function setTelephoneFournisseur(string $telephoneFournisseur): self
+    public function setTelephone(string $telephoneFournisseur): self
     {
-        $this->telephoneFournisseur = $telephoneFournisseur;
+        $this->telephone = $telephoneFournisseur;
 
         return $this;
     }
@@ -148,7 +157,7 @@ class Fournisseur
     {
         if (!$this->produits->contains($produit)) {
             $this->produits[] = $produit;
-            $produit->setIdFournisseur($this);
+            $produit->setFournisseur($this);
         }
 
         return $this;
@@ -158,8 +167,8 @@ class Fournisseur
     {
         if ($this->produits->removeElement($produit)) {
             // set the owning side to null (unless already changed)
-            if ($produit->getIdFournisseur() === $this) {
-                $produit->setIdFournisseur(null);
+            if ($produit->getFournisseur() === $this) {
+                $produit->setFournisseur(null);
             }
         }
 

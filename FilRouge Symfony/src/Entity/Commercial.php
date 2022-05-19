@@ -27,32 +27,42 @@ class Commercial
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $prenomCommercial;
+    private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $adresseCommercial;
+    private $adresse;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $cpCommercial;
+    private $cp;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $villeCommercial;
+    private $ville;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $emailCommercial;
+    private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $telephoneCommercial;
+    private $telephone;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Client::class, inversedBy="commercials")
+     */
+    private $client;
+
+    public function __construct()
+    {
+        $this->client = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -66,87 +76,113 @@ class Commercial
         return $this;
     }
 
-    public function getNomCommercial(): ?string
+    public function getNom(): ?string
     {
-        return $this->nomCommercial;
+        return $this->nom;
     }
 
-    public function setNomCommercial(string $nomCommercial): self
+    public function setNom(string $nomCommercial): self
     {
-        $this->nomCommercial = $nomCommercial;
+        $this->nom = $nomCommercial;
 
         return $this;
     }
 
-    public function getPrenomCommercial(): ?string
+    public function getPrenom(): ?string
     {
-        return $this->prenomCommercial;
+        return $this->prenom;
     }
 
-    public function setPrenomCommercial(string $prenomCommercial): self
+    public function setPrenom(string $prenomCommercial): self
     {
-        $this->prenomCommercial = $prenomCommercial;
+        $this->prenom = $prenomCommercial;
 
         return $this;
     }
 
-    public function getAdresseCommercial(): ?string
+    public function getAdresse(): ?string
     {
-        return $this->adresseCommercial;
+        return $this->adresse;
     }
 
-    public function setAdresseCommercial(string $adresseCommercial): self
+    public function setAdresse(string $adresseCommercial): self
     {
-        $this->adresseCommercial = $adresseCommercial;
+        $this->adresse = $adresseCommercial;
 
         return $this;
     }
 
-    public function getCpCommercial(): ?string
+    public function getCp(): ?string
     {
-        return $this->cpCommercial;
+        return $this->cp;
     }
 
-    public function setCpCommercial(string $cpCommercial): self
+    public function setCp(string $cpCommercial): self
     {
-        $this->cpCommercial = $cpCommercial;
+        $this->cp = $cpCommercial;
 
         return $this;
     }
 
-    public function getVilleCommercial(): ?string
+    public function getVille(): ?string
     {
-        return $this->villeCommercial;
+        return $this->ville;
     }
 
-    public function setVilleCommercial(string $villeCommercial): self
+    public function setVille(string $villeCommercial): self
     {
-        $this->villeCommercial = $villeCommercial;
+        $this->ville = $villeCommercial;
 
         return $this;
     }
 
-    public function getEmailCommercial(): ?string
+    public function getEmail(): ?string
     {
-        return $this->emailCommercial;
+        return $this->email;
     }
 
-    public function setEmailCommercial(string $emailCommercial): self
+    public function setEmail(string $emailCommercial): self
     {
-        $this->emailCommercial = $emailCommercial;
+        $this->email = $emailCommercial;
 
         return $this;
     }
 
-    public function getTelephoneCommercial(): ?string
+    public function getTelephone(): ?string
     {
-        return $this->telephoneCommercial;
+        return $this->telephone;
     }
 
-    public function setTelephoneCommercial(string $telephoneCommercial): self
+    public function setTelephone(string $telephoneCommercial): self
     {
-        $this->telephoneCommercial = $telephoneCommercial;
+        $this->telephone = $telephoneCommercial;
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Client>
+     */
+    public function getClient(): Collection
+    {
+        return $this->client;
+    }
+
+    public function addClient(Client $client): self
+    {
+        if (!$this->client->contains($client)) {
+            $this->client[] = $client;
+        }
+
+        return $this;
+    }
+
+    public function removeClient(Client $client): self
+    {
+        $this->client->removeElement($client);
+
+        return $this;
+    }
+
+    
 }

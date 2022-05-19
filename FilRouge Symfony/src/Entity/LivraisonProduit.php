@@ -28,14 +28,21 @@ class LivraisonProduit
      * @ORM\ManyToOne(targetEntity=Produit::class, inversedBy="livraisonProduits")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $idProduit;
+    private $produit;
 
     /**
      * @ORM\ManyToOne(targetEntity=Livraison::class, inversedBy="livraisonProduits")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $idLivraison;
+    private $livraison;
 
+
+    public function setId(int $id) :self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
     public function getId(): ?int
     {
         return $this->id;
@@ -53,26 +60,26 @@ class LivraisonProduit
         return $this;
     }
 
-    public function getIdProduit(): ?Produit
+    public function getProduit(): ?Produit
     {
-        return $this->idProduit;
+        return $this->produit;
     }
 
-    public function setIdProduit(?Produit $idProduit): self
+    public function setProduit(?Produit $idProduit): self
     {
-        $this->idProduit = $idProduit;
+        $this->produit = $idProduit;
 
         return $this;
     }
 
-    public function getIdLivraison(): ?Livraison
+    public function getLivraison(): ?Livraison
     {
-        return $this->idLivraison;
+        return $this->livraison;
     }
 
-    public function setIdLivraison(?Livraison $idLivraison): self
+    public function setLivraison(?Livraison $idLivraison): self
     {
-        $this->idLivraison = $idLivraison;
+        $this->livraison = $idLivraison;
 
         return $this;
     }

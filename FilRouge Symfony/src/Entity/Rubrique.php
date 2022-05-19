@@ -22,12 +22,12 @@ class Rubrique
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nomRubrique;
+    private $nom;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $photoRubrique;
+    private $photo;
 
     /**
      * @ORM\ManyToOne(targetEntity=Rubrique::class, inversedBy="sousRubrique")
@@ -64,26 +64,26 @@ class Rubrique
         return $this;
     }
 
-    public function getNomRubrique(): ?string
+    public function getNom(): ?string
     {
-        return $this->nomRubrique;
+        return $this->nom;
     }
 
-    public function setNomRubrique(string $nomRubrique): self
+    public function setNom(string $nomRubrique): self
     {
-        $this->nomRubrique = $nomRubrique;
+        $this->nom = $nomRubrique;
 
         return $this;
     }
 
-    public function getPhotoRubrique(): ?string
+    public function getPhoto(): ?string
     {
-        return $this->photoRubrique;
+        return $this->photo;
     }
 
-    public function setPhotoRubrique(string $photoRubrique): self
+    public function setPhoto(string $photoRubrique): self
     {
-        $this->photoRubrique = $photoRubrique;
+        $this->photo = $photoRubrique;
 
         return $this;
     }
@@ -142,7 +142,7 @@ class Rubrique
     {
         if (!$this->produits->contains($produit)) {
             $this->produits[] = $produit;
-            $produit->setIdRubrique($this);
+            $produit->setRubrique($this);
         }
 
         return $this;
@@ -152,8 +152,8 @@ class Rubrique
     {
         if ($this->produits->removeElement($produit)) {
             // set the owning side to null (unless already changed)
-            if ($produit->getIdRubrique() === $this) {
-                $produit->setIdRubrique(null);
+            if ($produit->getRubrique() === $this) {
+                $produit->setRubrique(null);
             }
         }
 

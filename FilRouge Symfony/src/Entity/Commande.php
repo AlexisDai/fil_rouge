@@ -24,37 +24,37 @@ class Commande
     /**
      * @ORM\Column(type="date")
      */
-    private $dateCommande;
+    private $date;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $adresseLivraisonCommande;
+    private $adresseLivraison;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $cpLivraisonCommande;
+    private $cpLivraison;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $villeLivraisonCommande;
+    private $villeLivraison;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $adresseFactureCommande;
+    private $adresseFacture;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $cpFactureCommande;
+    private $cpFacture;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $villeFactureCommande;
+    private $villeFacture;
 
     /**
      * @ORM\Column(type="date")
@@ -64,7 +64,7 @@ class Commande
     /**
      * @ORM\Column(type="decimal", precision=19, scale=4, nullable=true)
      */
-    private $totalCommande;
+    private $total;
 
 
     /**
@@ -72,16 +72,18 @@ class Commande
      */
     private $livraisons;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Client::class, inversedBy="commandes")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $client;
+
 
     /**
      * @ORM\OneToMany(targetEntity=DetailCommande::class, mappedBy="idCommande")
      */
     private $detailCommandes;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Client::class, inversedBy="commandes")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $client;
 
     public function __construct()
     {
@@ -101,90 +103,90 @@ class Commande
         return $this;
     } 
 
-    public function getDateCommande(): ?\DateTime
+    public function getDate(): ?\DateTime
     {
-        return $this->dateCommande;
+        return $this->date;
     }
 
     /**
      * @param \DateTime $dateCommande
      */
 
-    public function setDateCommande(\DateTime $dateCommande): self
+    public function setDate(\DateTime $dateCommande): self
     {
-        $this->dateCommande = $dateCommande;
+        $this->date = $dateCommande;
 
         return $this;
     }
 
-    public function getAdresseLivraisonCommande(): ?string
+    public function getAdresseLivraison(): ?string
     {
-        return $this->adresseLivraisonCommande;
+        return $this->adresseLivraison;
     }
 
-    public function setAdresseLivraisonCommande(string $adresseLivraisonCommande): self
+    public function setAdresseLivraison(string $adresseLivraisonCommande): self
     {
-        $this->adresseLivraisonCommande = $adresseLivraisonCommande;
+        $this->adresseLivraison = $adresseLivraisonCommande;
 
         return $this;
     }
 
-    public function getCpLivraisonCommande(): ?string
+    public function getCpLivraison(): ?string
     {
-        return $this->cpLivraisonCommande;
+        return $this->cpLivraison;
     }
 
-    public function setCpLivraisonCommande(string $cpLivraisonCommande): self
+    public function setCpLivraison(string $cpLivraisonCommande): self
     {
-        $this->cpLivraisonCommande = $cpLivraisonCommande;
+        $this->cpLivraison = $cpLivraisonCommande;
 
         return $this;
     }
 
-    public function getVilleLivraisonCommande(): ?string
+    public function getVilleLivraison(): ?string
     {
-        return $this->villeLivraisonCommande;
+        return $this->villeLivraison;
     }
 
-    public function setVilleLivraisonCommande(string $villeLivraisonCommande): self
+    public function setVilleLivraison(string $villeLivraisonCommande): self
     {
-        $this->villeLivraisonCommande = $villeLivraisonCommande;
+        $this->villeLivraison = $villeLivraisonCommande;
 
         return $this;
     }
 
-    public function getAdresseFactureCommande(): ?string
+    public function getAdresseFacture(): ?string
     {
-        return $this->adresseFactureCommande;
+        return $this->adresseFacture;
     }
 
-    public function setAdresseFactureCommande(string $adresseFactureCommande): self
+    public function setAdresseFacture(string $adresseFactureCommande): self
     {
-        $this->adresseFactureCommande = $adresseFactureCommande;
+        $this->adresseFacture = $adresseFactureCommande;
 
         return $this;
     }
 
-    public function getCpFactureCommande(): ?string
+    public function getCpFacture(): ?string
     {
-        return $this->cpFactureCommande;
+        return $this->cpFacture;
     }
 
-    public function setCpFactureCommande(string $cpFactureCommande): self
+    public function setCpFacture(string $cpFactureCommande): self
     {
-        $this->cpFactureCommande = $cpFactureCommande;
+        $this->cpFacture = $cpFactureCommande;
 
         return $this;
     }
 
-    public function getVilleFactureCommande(): ?string
+    public function getVilleFacture(): ?string
     {
-        return $this->villeFactureCommande;
+        return $this->villeFacture;
     }
 
-    public function setVilleFactureCommande(string $villeFactureCommande): self
+    public function setVilleFacture(string $villeFactureCommande): self
     {
-        $this->villeFactureCommande = $villeFactureCommande;
+        $this->villeFacture = $villeFactureCommande;
 
         return $this;
     }
@@ -201,14 +203,14 @@ class Commande
         return $this;
     }
 
-    public function getTotalCommande(): ?string
+    public function getTotal(): ?string
     {
-        return $this->totalCommande;
+        return $this->total;
     }
 
-    public function setTotalCommande(string $totalCommande): self
+    public function setTotal(string $totalCommande): self
     {
-        $this->totalCommande = $totalCommande;
+        $this->total = $totalCommande;
 
         return $this;
     }
@@ -227,7 +229,7 @@ class Commande
     {
         if (!$this->livraisons->contains($livraison)) {
             $this->livraisons[] = $livraison;
-            $livraison->setIdCommande($this);
+            $livraison->setCommande($this);
         }
 
         return $this;
@@ -237,25 +239,15 @@ class Commande
     {
         if ($this->livraisons->removeElement($livraison)) {
             // set the owning side to null (unless already changed)
-            if ($livraison->getIdCommande() === $this) {
-                $livraison->setIdCommande(null);
+            if ($livraison->getCommande() === $this) {
+                $livraison->setCommande(null);
             }
         }
 
         return $this;
     }
 
-    public function getClient(): ?Client
-    {
-        return $this->client;
-    }
-
-    public function setClient(?Client $idClient): self
-    {
-        $this->client = $idClient;
-
-        return $this;
-    }
+  
 
     /**
      * @return Collection<int, DetailCommande>
@@ -269,7 +261,7 @@ class Commande
     {
         if (!$this->detailCommandes->contains($detailCommande)) {
             $this->detailCommandes[] = $detailCommande;
-            $detailCommande->setIdCommande($this);
+            $detailCommande->setCommande($this);
         }
 
         return $this;
@@ -279,10 +271,22 @@ class Commande
     {
         if ($this->detailCommandes->removeElement($detailCommande)) {
             // set the owning side to null (unless already changed)
-            if ($detailCommande->getIdCommande() === $this) {
-                $detailCommande->setIdCommande(null);
+            if ($detailCommande->getCommande() === $this) {
+                $detailCommande->setCommande(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getClient(): ?Client
+    {
+        return $this->client;
+    }
+
+    public function setClient(?Client $client): self
+    {
+        $this->client = $client;
 
         return $this;
     }

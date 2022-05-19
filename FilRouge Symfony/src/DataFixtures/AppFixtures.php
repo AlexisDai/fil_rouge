@@ -20,6 +20,67 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
 
+        include 'Commercial_vg.php';
+
+        $commercialRepo = $manager->getRepository(Commercial::class);
+
+        foreach ($commercials as $commer){
+
+            $commercial = new Commercial();
+            $commercial
+            ->setId($commer['id'])
+            ->setNom($commer['nom_commercial'])
+            ->setPrenom($commer['prenom_commercial'])
+            ->setAdresse($commer['adresse_commercial'])
+            ->setCp($commer['cp_commercial'])
+            ->setVille($commer['ville_commercial'])
+            ->setEmail($commer['email_commercial'])
+            ->setTelephone($commer['telephone_commercial']);
+
+            $manager->persist($commercial);
+
+            $metadata = $manager->getClassMetaData(Commercial::class);
+            $metadata->setIdGeneratorType(\Doctrine\ORM\Mapping\ClassMetaData::GENERATOR_TYPE_NONE);
+        }
+
+        $manager->flush();
+        
+
+
+
+
+
+
+        include 'Fournisseur_vg.php';
+        
+
+        $fournisseurRepo = $manager->getRepository(Fournisseur::class);
+
+        foreach ($fournisseur as $fou){
+
+            $fournisseur = new Fournisseur();
+            $fournisseur
+            ->setId($fou['id'])
+            ->setNom($fou['nom_fournisseur'])
+            ->setAdresse($fou['adresse_fournisseur'])
+            ->setCp($fou['cp_fournisseur'])
+            ->setVille($fou['ville_fournisseur'])
+            ->setEmail($fou['email_fournisseur'])
+            ->setTelephone($fou['telephone_fournisseur']);
+
+            $manager->persist($fournisseur);
+
+            $metadata = $manager->getClassMetaData(Fournisseur::class);
+            $metadata->setIdGeneratorType(\Doctrine\ORM\Mapping\ClassMetaData::GENERATOR_TYPE_NONE);
+        }
+
+        $manager->flush();
+
+
+
+
+
+
         include 'Client_vg.php';
         $clientRepo = $manager->getRepository(Client::class);
 
@@ -27,20 +88,20 @@ class AppFixtures extends Fixture
             $client = new Client();
             $client
             ->setId($cli['id'])
-            ->setCategorieClient($cli['categorie_client'])
-            ->setAdresseLivraisonClient($cli['adresse_livraison_client'])       
-            ->setCpLivraisonClient($cli['cp_livraison_client'])
-            ->setVilleLivraisonClient($cli['ville_livraison_client'])
-            ->setAdresseFactureClient($cli['adresse_facture_client'])
-            ->setCpFactureClient($cli['cp_facture_client'])
-            ->setVilleFactureClient($cli['ville_facture_client'])
-            ->setModePaiementClient($cli['mode_paiement_client'])
-            ->setReductionClient($cli['reduction_client'])
-            ->setCoefficientClient($cli['coefficient_client'])
-            ->setNumeroSiretClient($cli['numero_siret_client'])
-            ->setNomClient($cli['nom_client'])
-            ->setPrenomClient($cli['prenom_client'])
-            ->setNomEntrepriseClient($cli['nom_entreprise_client']);
+            ->setCategorie($cli['categorie_client'])
+            ->setAdresseLivraison($cli['adresse_livraison_client'])       
+            ->setCpLivraison($cli['cp_livraison_client'])
+            ->setVilleLivraison($cli['ville_livraison_client'])
+            ->setAdresseFacture($cli['adresse_facture_client'])
+            ->setCpFacture($cli['cp_facture_client'])
+            ->setVilleFacture($cli['ville_facture_client'])
+            ->setModePaiement($cli['mode_paiement_client'])
+            ->setReduction($cli['reduction_client'])
+            ->setCoefficient($cli['coefficient_client'])
+            ->setNumeroSiret($cli['numero_siret_client'])
+            ->setNom($cli['nom_client'])
+            ->setPrenom($cli['prenom_client'])
+            ->setNomEntreprise($cli['nom_entreprise_client']);
 
             $manager->persist($client);
 
@@ -52,27 +113,29 @@ class AppFixtures extends Fixture
   
 
 
+
+
         include 'Commande_vg.php';
 
         $commandeRepo = $manager->getRepository(Commande::class);
 
         foreach ($commandes as $com){
 
+            $client = $clientRepo->find($com["id_client_id"]);
+
             $commande = new Commande();
             $commande
-            ->setId($com['id']);
-            $client = $clientRepo->find($com['id']);
-            $commande
+            ->setId($com['id'])
             ->setClient($client)
-            ->setDateCommande(new \DateTime($com['date_commande']))
-            ->setAdresseLivraisonCommande($com['adresse_livraison_commande'])
-            ->setCpLivraisonCommande($com['cp_livraison_commande'])
-            ->setVilleLivraisonCommande($com['ville_livraison_commande'])
-            ->setAdresseFactureCommande($com['adresse_facture_commande'])
-            ->setCpFactureCommande($com['cp_facture_commande'])
-            ->setVilleFactureCommande($com['ville_facture_commande'])
+            ->setDate(new \DateTime($com['date_commande']))
+            ->setAdresseLivraison($com['adresse_livraison_commande'])
+            ->setCpLivraison($com['cp_livraison_commande'])
+            ->setVilleLivraison($com['ville_livraison_commande'])
+            ->setAdresseFacture($com['adresse_facture_commande'])
+            ->setCpFacture($com['cp_facture_commande'])
+            ->setVilleFacture($com['ville_facture_commande'])
             ->setDateFacture(new \DateTime($com['date_facture']))
-            ->setTotalCommande($com['total_commande']);
+            ->setTotal($com['total_commande']);
 
             $manager->persist($commande);
 
@@ -84,73 +147,20 @@ class AppFixtures extends Fixture
 
 
 
-        include 'Commercial_vg.php';
 
-        $commercialRepo = $manager->getRepository(Commercial::class);
-
-        foreach ($commercials as $commer){
-
-            $commercial = new Commercial();
-            $commercial
-            ->setId($commer['id'])
-            ->setNomCommercial($commer['nom_commercial'])
-            ->setPrenomCommercial($commer['prenom_commercial'])
-            ->setAdresseCommercial($commer['adresse_commercial'])
-            ->setCpCommercial($commer['cp_commercial'])
-            ->setVilleCommercial($commer['ville_commercial'])
-            ->setEmailCommercial($commer['email_commercial'])
-            ->setTelephoneCommercial($commer['telephone_commercial']);
-
-            $manager->persist($commercial);
-
-            $metadata = $manager->getClassMetaData(Commercial::class);
-            $metadata->setIdGeneratorType(\Doctrine\ORM\Mapping\ClassMetaData::GENERATOR_TYPE_NONE);
-        }
-
-        $manager->flush();
-
-
-
-        // include 'DetailCommande_vg.php';
-
-        // $detailCommandeRepo = $manager->getRepository(DetailCommande::class);
-
-        // foreach ($detail_commandes as $detail){
-
-        //     $details = new DetailCommande();
-        //     $details
-        //     ->setId($detail['id'])
-        //     ->setQuantiteArticle($detail['quantite_article'])
-        //     ->setPrixVente($detail['prix_vente'])
-        //     ->setPrixHorsTaxeTotal($detail['prix_hors_taxe_total'])
-        //     ->setTvaProduit($detail['tva_produit']);
-        //     $commande = $commandeRepo->find($detail['id']);
-        //     $details 
-        //     ->setCommande($commande);
-        //     $produit = $produitRepo->find($detail['id']);
-        //     $details
-        //     ->setProduit($produit);
-
-        //     $manager->persist($details);
-
-        //     $metadata = $manager->getClassMetaData(DetailCommande::class);
-        //     $metadata->setIdGeneratorType(\Doctrine\ORM\Mapping\ClassMetaData::GENERATOR_TYPE_NONE);
-        // }
-
-        // $manager->flush();
 
 
 
         include 'Rubrique_vg.php';
         
-        //$rubriqueRepo = $manager->getRepository(Rubrique::class);
+        $rubriqueRepo = $manager->getRepository(Rubrique::class);
 
         foreach ($rubriques as $rub){
 
             $rubrique = new Rubrique();
             $rubrique
-            ->setNomRubrique($rub['nom_rubrique'])
-            ->setPhotoRubrique($rub['photo_rubrique']);
+            ->setNom($rub['nom_rubrique'])
+            ->setPhoto($rub['photo_rubrique']);
 
 
             $manager->persist($rubrique);
@@ -159,8 +169,8 @@ class AppFixtures extends Fixture
             foreach ($rub['sousrubriques'] as $rub2) {
                 $rubrique2 = new Rubrique();
                 $rubrique2
-                ->setNomRubrique($rub2['nom_rubrique'])
-                ->setPhotoRubrique($rub2['photo_rubrique'])
+                ->setNom($rub2['nom_rubrique'])
+                ->setPhoto($rub2['photo_rubrique'])
                 ->setRubrique($rubrique);
 
                 $manager->persist($rubrique2);
@@ -170,68 +180,134 @@ class AppFixtures extends Fixture
             $manager->flush();
         }
 
-            // $rub1 = new Rubrique();
-            // $rub1->setNomRubrique("Guitare")
-            // ->setPhotoRubrique("");
-
-            // $rub2 = new Rubrique();
-            // $rub2->setNomRubrique("Guitares Electriques")
-            // ->setRubrique($rub1)
-            // ->setPhotoRubrique("");
-
-
-            // $manager->persist($rub1);
-            // $manager->persist($rub2);
-
-            $manager->flush();
 
 
 
 
-        
-        
-        
+
         include 'Produit_vg.php';
 
 
 
+        $produitRepo = $manager->getRepository(Produit::class);
+
+        foreach ($produits as $pro){
 
 
+            $produits = new Produit();
+            $produits 
+            ->setId($pro['id']);
+            $rubriques = $rubriqueRepo->find($pro['rubrique_id']);
+            $produits
+            ->setRubrique($rubriques);
+            $fournisseur = $fournisseurRepo->find($pro['fournisseur_id']);
+            $produits
+            ->setFournisseur($fournisseur);
+            $produits
+            ->setLibelleCourt($pro['libelle_court'])
+            ->setLibelleLong($pro['libelle_long'])
+            ->setReferenceFournisseur($pro['reference_fournisseur'])
+            ->setPhoto($pro['photo_produit'])
+            ->setPrixAchat($pro['prix_achat'])
+            ->setPrixHorsTaxe($pro['prix_hors_taxe']);
+    
+            $manager->persist($produits);
 
+            $metadata = $manager->getClassMetaData(Produit::class);
+            $metadata->setIdGeneratorType(\Doctrine\ORM\Mapping\ClassMetaData::GENERATOR_TYPE_NONE);
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        $manager->flush();
 
         
-        include 'ClientCommercial_vg.php';
-        include 'Fournisseur_vg.php';
-        include 'LivraisonProduit_vg.php';
+
+
+
+
+
+
+        include 'DetailCommande_vg.php';
+
+        $detailCommandeRepo = $manager->getRepository(DetailCommande::class);
+
+        foreach ($detail_commandes as $detail){
+
+            $details = new DetailCommande();
+            $details
+            ->setId($detail['id'])
+            ->setQuantiteArticle($detail['quantite_article'])
+            ->setPrixVente($detail['prix_vente'])
+            ->setPrixHorsTaxeTotal($detail['prix_hors_taxe_total'])
+            ->setTvaProduit($detail['tva_produit']);
+            $commande = $commandeRepo->find($detail['id_commande_id']);
+            $details 
+            ->setCommande($commande);
+            $produit = $produitRepo->find($detail['id_produit_id']);
+            $details
+            ->setProduit($produit);
+
+            $manager->persist($details);
+
+            $metadata = $manager->getClassMetaData(DetailCommande::class);
+            $metadata->setIdGeneratorType(\Doctrine\ORM\Mapping\ClassMetaData::GENERATOR_TYPE_NONE);
+        }
+
+        $manager->flush();
+
+
+
+
+
         include 'Livraison_vg.php';
+
+        $livraisonRepo = $manager->getRepository(Livraison::class);
+
+        foreach($livraison as $liv){
+
+            $commande = $commandeRepo->find($liv['id_commande_id']);
+
+            $livraisons = new Livraison;
+
+            $livraisons
+            ->setId($liv['id'])
+            ->setCommande($commande)
+            ->setAdresse($liv['adresse_livraison'])
+            ->setCp($liv['cp_livraison'])
+            ->setVille($liv['ville_livraison'])
+            ->setDate(new \DateTime($liv['date_livraison']));
+
+            $manager->persist($livraisons);
+
+            $metadata = $manager->getClassMetaData(Livraison::class);
+            $metadata->setIdGeneratorType(\Doctrine\ORM\Mapping\ClassMetaData::GENERATOR_TYPE_NONE);
+        }
+
+        $manager->flush();
+
+
+        $livraisonProduits = new LivraisonProduit;
+        include 'LivraisonProduit_vg.php';
         
+        $livraisonProduitRepo = $manager->getRepository(LivraisonProduit::class);
+
+        foreach($livraison_produit as $livPro){
+
+            $produit = $produitRepo->find($livPro['id_produit_id']);
+            $livraison = $livraisonRepo->find($livPro['id_livraison_id']);
+
+            $livraisonProduits = new LivraisonProduit;
+
+            $livraisonProduits
+            ->setId($livPro['id'])
+            ->setProduit($produit)
+            ->setLivraison($livraison)
+            ->setQuantiteProduitLivre($livPro['quantite_produit_livre']);
         
+            $manager->persist($livraisonProduits);
 
-
-
-
-
+            $metadata = $manager->getClassMetaData(LivraisonProduit::class);
+            $metadata->setIdGeneratorType(\Doctrine\ORM\Mapping\ClassMetaData::GENERATOR_TYPE_NONE);
+        }
 
         $manager->flush();
   }

@@ -37,7 +37,7 @@ class Produit
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $photoProduit;
+    private $photo;
 
     /**
      * @ORM\Column(type="decimal", precision=19, scale=4)
@@ -53,13 +53,13 @@ class Produit
      * @ORM\ManyToOne(targetEntity=Rubrique::class, inversedBy="produits")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $idRubrique;
+    private $rubrique;
 
     /**
      * @ORM\ManyToOne(targetEntity=Fournisseur::class, inversedBy="produits")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $idFournisseur;
+    private $fournisseur;
 
     /**
      * @ORM\OneToMany(targetEntity=DetailCommande::class, mappedBy="idProduit")
@@ -75,6 +75,13 @@ class Produit
     {
         $this->detailCommandes = new ArrayCollection();
         $this->livraisonProduits = new ArrayCollection();
+    }
+
+    public function setId(INT $id): self
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     public function getId(): ?int
@@ -118,14 +125,14 @@ class Produit
         return $this;
     }
 
-    public function getPhotoProduit(): ?string
+    public function getPhoto(): ?string
     {
-        return $this->photoProduit;
+        return $this->photo;
     }
 
-    public function setPhotoProduit(string $photoProduit): self
+    public function setPhoto(string $photoProduit): self
     {
-        $this->photoProduit = $photoProduit;
+        $this->photo = $photoProduit;
 
         return $this;
     }
@@ -154,26 +161,26 @@ class Produit
         return $this;
     }
 
-    public function getIdRubrique(): ?Rubrique
+    public function getRubrique(): ?Rubrique
     {
-        return $this->idRubrique;
+        return $this->rubrique;
     }
 
-    public function setIdRubrique(?Rubrique $idRubrique): self
+    public function setRubrique(?Rubrique $idRubrique): self
     {
-        $this->idRubrique = $idRubrique;
+        $this->rubrique = $idRubrique;
 
         return $this;
     }
 
-    public function getIdFournisseur(): ?Fournisseur
+    public function getFournisseur(): ?Fournisseur
     {
-        return $this->idFournisseur;
+        return $this->fournisseur;
     }
 
-    public function setIdFournisseur(?Fournisseur $idFournisseur): self
+    public function setFournisseur(?Fournisseur $idFournisseur): self
     {
-        $this->idFournisseur = $idFournisseur;
+        $this->fournisseur = $idFournisseur;
 
         return $this;
     }
@@ -191,7 +198,7 @@ class Produit
     {
         if (!$this->detailCommandes->contains($detailCommande)) {
             $this->detailCommandes[] = $detailCommande;
-            $detailCommande->setIdProduit($this);
+            $detailCommande->setProduit($this);
         }
 
         return $this;
@@ -201,8 +208,8 @@ class Produit
     {
         if ($this->detailCommandes->removeElement($detailCommande)) {
             // set the owning side to null (unless already changed)
-            if ($detailCommande->getIdProduit() === $this) {
-                $detailCommande->setIdProduit(null);
+            if ($detailCommande->getProduit() === $this) {
+                $detailCommande->setProduit(null);
             }
         }
 
@@ -221,7 +228,7 @@ class Produit
     {
         if (!$this->livraisonProduits->contains($livraisonProduit)) {
             $this->livraisonProduits[] = $livraisonProduit;
-            $livraisonProduit->setIdProduit($this);
+            $livraisonProduit->setProduit($this);
         }
 
         return $this;
@@ -231,8 +238,8 @@ class Produit
     {
         if ($this->livraisonProduits->removeElement($livraisonProduit)) {
             // set the owning side to null (unless already changed)
-            if ($livraisonProduit->getIdProduit() === $this) {
-                $livraisonProduit->setIdProduit(null);
+            if ($livraisonProduit->getProduit() === $this) {
+                $livraisonProduit->setProduit(null);
             }
         }
 
