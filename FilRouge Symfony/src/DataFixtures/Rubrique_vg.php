@@ -131,24 +131,6 @@ $rubriques = [
 		"photo_rubrique" => "8accessoires.jpeg",
 		"sousrubriques" => [
 			[
-				"nom_rubrique" => "Projecteurs",
-				"photo_rubrique" => "projecteur.jpeg",
-			],
-			[
-				"nom_rubrique" => "Stroboscope",
-				"photo_rubrique" => "stroboscope.jpeg",
-			],
-			[
-				"nom_rubrique" => "Lasers",
-				"photo_rubrique" => "lasers.jpeg",
-			]
-		]
-	],
-	[
-		"nom_rubrique" => "Accessoires",
-		"photo_rubrique" => "8accessoires.jpeg",
-		"sousrubriques" => [
-			[
 				"nom_rubrique" => "Suports",
 				"photo_rubrique" => "support.jpeg",
 			],

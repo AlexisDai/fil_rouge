@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+<h1>Liste des produits</h1>
+
+{% for pro in produit %}
+    <div>
+            {{ pro.getLibelleLong }}
+    </div>
+{% endfor %}
+
+{% endblock %}

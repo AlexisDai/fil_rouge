@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+<h1>sous-Rubriques</h1>
+
+{% for ssRub in sousRubrique %}
+    <div>
+        <a href="{{ path('produit', {'id':ssRub.id}) }}">
+            {{ ssRub.nom }}
+        </a>
+    </div>
+{% endfor %}
+
+{% endblock %}
