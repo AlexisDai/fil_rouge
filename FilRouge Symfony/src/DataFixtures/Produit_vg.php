@@ -2,7 +2,7 @@
 $produits = array(
 	array(
 		"id" => 1,
-		"rubrique_id" => 24,
+		"rubrique_id" => 22,
 		"fournisseur_id" => 3,
 		"libelle_court" => "TBPro",
 		"libelle_long" => "the box pro",
@@ -13,7 +13,7 @@ $produits = array(
 	),
 	array(
 		"id" => 2,
-		"rubrique_id" => 24,
+		"rubrique_id" => 22,
 		"fournisseur_id" => 4,
 		"libelle_court" => "HKA",
 		"libelle_long" => "HK Audio",
@@ -24,7 +24,7 @@ $produits = array(
 	),
 	array(
 		"id" => 3,
-		"rubrique_id" => 24,
+		"rubrique_id" => 22,
 		"fournisseur_id" => 1,
 		"libelle_court" => "FBTHX",
 		"libelle_long" => "FBT HIMaxX60",
@@ -35,7 +35,7 @@ $produits = array(
 	),
 	array(
 		"id" => 4,
-		"rubrique_id" => 25,
+		"rubrique_id" => 23,
 		"fournisseur_id" => 2,
 		"libelle_court" => "SM58",
 		"libelle_long" => "Shure",
@@ -46,7 +46,7 @@ $produits = array(
 	),
 	array(
 		"id" => 5,
-		"rubrique_id" => 25,
+		"rubrique_id" => 23,
 		"fournisseur_id" => 5,
 		"libelle_court" => "TTBone",
 		"libelle_long" => "the t.bone",
@@ -57,7 +57,7 @@ $produits = array(
 	),
 	array(
 		"id" => 6,
-		"rubrique_id" => 25,
+		"rubrique_id" => 23,
 		"fournisseur_id" => 3,
 		"libelle_court" => "E835S",
 		"libelle_long" => "Senheiser",
@@ -68,7 +68,7 @@ $produits = array(
 	),
 	array(
 		"id" => 7,
-		"rubrique_id" => 26,
+		"rubrique_id" => 24,
 		"fournisseur_id" => 2,
 		"libelle_court" => "X2222USB",
 		"libelle_long" => "Behringer Xenyx",
@@ -79,7 +79,7 @@ $produits = array(
 	),
 	array(
 		"id" => 8,
-		"rubrique_id" => 26,
+		"rubrique_id" => 24,
 		"fournisseur_id" => 4,
 		"libelle_court" => "TTMix",
 		"libelle_long" => "the t.mix xmix",
@@ -90,7 +90,7 @@ $produits = array(
 	),
 	array(
 		"id" => 9,
-		"rubrique_id" => 26,
+		"rubrique_id" => 24,
 		"fournisseur_id" => 1,
 		"libelle_court" => "12MTK",
 		"libelle_long" => "Soundcraft Signature",
@@ -101,7 +101,7 @@ $produits = array(
 	),
 	array(
 		"id" => 10,
-		"rubrique_id" => 21,
+		"rubrique_id" => 18,
 		"fournisseur_id" => 4,
 		"libelle_court" => "FR4XBK",
 		"libelle_long" => "Roland",
@@ -112,7 +112,7 @@ $produits = array(
 	),
 	array(
 		"id" => 11,
-		"rubrique_id" => 21,
+		"rubrique_id" => 18,
 		"fournisseur_id" => 1,
 		"libelle_court" => "MKII",
 		"libelle_long" => "Startone Piano Accordion",
@@ -123,7 +123,7 @@ $produits = array(
 	),
 	array(
 		"id" => 12,
-		"rubrique_id" => 21,
+		"rubrique_id" => 18,
 		"fournisseur_id" => 3,
 		"libelle_court" => "SAPHIR",
 		"libelle_long" => "Weltmeister",
@@ -134,7 +134,7 @@ $produits = array(
 	),
 	array(
 		"id" => 13,
-		"rubrique_id" => 22,
+		"rubrique_id" => 19,
 		"fournisseur_id" => 2,
 		"libelle_court" => "SALDEL",
 		"libelle_long" => "Salvi",
@@ -145,7 +145,7 @@ $produits = array(
 	),
 	array(
 		"id" => 14,
-		"rubrique_id" => 22,
+		"rubrique_id" => 19,
 		"fournisseur_id" => 5,
 		"libelle_court" => "SQB",
 		"libelle_long" => "Thomann SQB",
@@ -156,7 +156,7 @@ $produits = array(
 	),
 	array(
 		"id" => 15,
-		"rubrique_id" => 22,
+		"rubrique_id" => 19,
 		"fournisseur_id" => 1,
 		"libelle_court" => "MLL",
 		"libelle_long" => "Auris My Little Lyre",
@@ -167,7 +167,7 @@ $produits = array(
 	),
 	array(
 		"id" => 16,
-		"rubrique_id" => 23,
+		"rubrique_id" => 20,
 		"fournisseur_id" => 4,
 		"libelle_court" => "111VN",
 		"libelle_long" => "Thomann Double Bass",
@@ -178,7 +178,7 @@ $produits = array(
 	),
 	array(
 		"id" => 17,
-		"rubrique_id" => 23,
+		"rubrique_id" => 20,
 		"fournisseur_id" => 3,
 		"libelle_court" => "DDB",
 		"libelle_long" => "Duke Didi Beck",
@@ -189,7 +189,7 @@ $produits = array(
 	),
 	array(
 		"id" => 18,
-		"rubrique_id" => 23,
+		"rubrique_id" => 20,
 		"fournisseur_id" => 2,
 		"libelle_court" => "BKRD",
 		"libelle_long" => "Thomann Rockabilly Psycho",
@@ -200,7 +200,7 @@ $produits = array(
 	),
 	array(
 		"id" => 19,
-		"rubrique_id" => 9,
+		"rubrique_id" => 2,
 		"fournisseur_id" => 1,
 		"libelle_court" => "20HSS",
 		"libelle_long" => "Harley Benton",
@@ -211,7 +211,7 @@ $produits = array(
 	),
 	array(
 		"id" => 20,
-		"rubrique_id" => 9,
+		"rubrique_id" => 2,
 		"fournisseur_id" => 4,
 		"libelle_court" => "EBBK",
 		"libelle_long" => "Fender Jim Root",
@@ -222,7 +222,7 @@ $produits = array(
 	),
 	array(
 		"id" => 21,
-		"rubrique_id" => 9,
+		"rubrique_id" => 2,
 		"fournisseur_id" => 2,
 		"libelle_court" => "MH10",
 		"libelle_long" => "ESP LTD",
@@ -233,7 +233,7 @@ $produits = array(
 	),
 	array(
 		"id" => 22,
-		"rubrique_id" => 10,
+		"rubrique_id" => 3,
 		"fournisseur_id" => 5,
 		"libelle_court" => "GL2NT",
 		"libelle_long" => "Harley Benton Guitarlele",
@@ -244,7 +244,7 @@ $produits = array(
 	),
 	array(
 		"id" => 23,
-		"rubrique_id" => 10,
+		"rubrique_id" => 3,
 		"fournisseur_id" => 2,
 		"libelle_court" => "CG851",
 		"libelle_long" => "Startone Pink",
@@ -255,7 +255,7 @@ $produits = array(
 	),
 	array(
 		"id" => 24,
-		"rubrique_id" => 10,
+		"rubrique_id" => 3,
 		"fournisseur_id" => 4,
 		"libelle_court" => "GL1",
 		"libelle_long" => "Yamaha",
@@ -266,7 +266,7 @@ $produits = array(
 	),
 	array(
 		"id" => 25,
-		"rubrique_id" => 11,
+		"rubrique_id" => 4,
 		"fournisseur_id" => 3,
 		"libelle_court" => "BT2E",
 		"libelle_long" => "Taylor Baby Mahogany",
@@ -277,7 +277,7 @@ $produits = array(
 	),
 	array(
 		"id" => 26,
-		"rubrique_id" => 11,
+		"rubrique_id" => 4,
 		"fournisseur_id" => 1,
 		"libelle_court" => "LJ10",
 		"libelle_long" => "Furch",
@@ -288,7 +288,7 @@ $produits = array(
 	),
 	array(
 		"id" => 27,
-		"rubrique_id" => 11,
+		"rubrique_id" => 4,
 		"fournisseur_id" => 2,
 		"libelle_court" => "ME2BK",
 		"libelle_long" => "Lava Music",
@@ -299,7 +299,7 @@ $produits = array(
 	),
 	array(
 		"id" => 28,
-		"rubrique_id" => 14,
+		"rubrique_id" => 9,
 		"fournisseur_id" => 1,
 		"libelle_court" => "Yab1",
 		"libelle_long" => "Yamaha b1 PE",
@@ -310,7 +310,7 @@ $produits = array(
 	),
 	array(
 		"id" => 29,
-		"rubrique_id" => 14,
+		"rubrique_id" => 9,
 		"fournisseur_id" => 1,
 		"libelle_court" => "Yab3",
 		"libelle_long" => "Yamaha b3 PE",
@@ -321,7 +321,7 @@ $produits = array(
 	),
 	array(
 		"id" => 30,
-		"rubrique_id" => 14,
+		"rubrique_id" => 9,
 		"fournisseur_id" => 1,
 		"libelle_court" => "Kak15",
 		"libelle_long" => "Kawai K15 E EP",
@@ -332,7 +332,7 @@ $produits = array(
 	),
 	array(
 		"id" => 31,
-		"rubrique_id" => 15,
+		"rubrique_id" => 10,
 		"fournisseur_id" => 2,
 		"libelle_court" => "KaGL10",
 		"libelle_long" => "Kawai GL 10 EP",
@@ -343,7 +343,7 @@ $produits = array(
 	),
 	array(
 		"id" => 32,
-		"rubrique_id" => 15,
+		"rubrique_id" => 10,
 		"fournisseur_id" => 2,
 		"libelle_court" => "YaC3",
 		"libelle_long" => "Yamaha C3X PE",
@@ -354,7 +354,7 @@ $produits = array(
 	),
 	array(
 		"id" => 33,
-		"rubrique_id" => 15,
+		"rubrique_id" => 10,
 		"fournisseur_id" => 2,
 		"libelle_court" => "SeB211",
 		"libelle_long" => "Steinway & Sons B221",
@@ -365,7 +365,7 @@ $produits = array(
 	),
 	array(
 		"id" => 34,
-		"rubrique_id" => 16,
+		"rubrique_id" => 11,
 		"fournisseur_id" => 3,
 		"libelle_court" => "ThDP95",
 		"libelle_long" => "Thomann DP95",
@@ -376,7 +376,7 @@ $produits = array(
 	),
 	array(
 		"id" => 35,
-		"rubrique_id" => 16,
+		"rubrique_id" => 11,
 		"fournisseur_id" => 3,
 		"libelle_court" => "HeDP501",
 		"libelle_long" => "Hemingway DP501",
@@ -387,7 +387,7 @@ $produits = array(
 	),
 	array(
 		"id" => 36,
-		"rubrique_id" => 16,
+		"rubrique_id" => 11,
 		"fournisseur_id" => 3,
 		"libelle_court" => "KaCN29",
 		"libelle_long" => "Kawai CN29",
@@ -398,7 +398,7 @@ $produits = array(
 	),
 	array(
 		"id" => 37,
-		"rubrique_id" => 17,
+		"rubrique_id" => 13,
 		"fournisseur_id" => 4,
 		"libelle_court" => "YaYAS280",
 		"libelle_long" => "Yamaha YAS280",
@@ -409,7 +409,7 @@ $produits = array(
 	),
 	array(
 		"id" => 38,
-		"rubrique_id" => 17,
+		"rubrique_id" => 13,
 		"fournisseur_id" => 4,
 		"libelle_court" => "ThTAS180",
 		"libelle_long" => "Thomann TAS180",
@@ -420,7 +420,7 @@ $produits = array(
 	),
 	array(
 		"id" => 39,
-		"rubrique_id" => 17,
+		"rubrique_id" => 13,
 		"fournisseur_id" => 4,
 		"libelle_court" => "StSAS75",
 		"libelle_long" => "Startone SAS75",
@@ -431,7 +431,7 @@ $produits = array(
 	),
 	array(
 		"id" => 40,
-		"rubrique_id" => 18,
+		"rubrique_id" => 14,
 		"fournisseur_id" => 5,
 		"libelle_court" => "ThTR5BB",
 		"libelle_long" => "Thomann TR5BB",
@@ -442,7 +442,7 @@ $produits = array(
 	),
 	array(
 		"id" => 41,
-		"rubrique_id" => 18,
+		"rubrique_id" => 14,
 		"fournisseur_id" => 5,
 		"libelle_court" => "ThTR200",
 		"libelle_long" => "Thomann TR200BB",
@@ -453,7 +453,7 @@ $produits = array(
 	),
 	array(
 		"id" => 42,
-		"rubrique_id" => 18,
+		"rubrique_id" => 14,
 		"fournisseur_id" => 5,
 		"libelle_court" => "BaTR450",
 		"libelle_long" => "Bach TR450S",
@@ -464,7 +464,7 @@ $produits = array(
 	),
 	array(
 		"id" => 43,
-		"rubrique_id" => 19,
+		"rubrique_id" => 15,
 		"fournisseur_id" => 1,
 		"libelle_court" => "Th12H",
 		"libelle_long" => "Thomann 12H",
@@ -475,7 +475,7 @@ $produits = array(
 	),
 	array(
 		"id" => 44,
-		"rubrique_id" => 19,
+		"rubrique_id" => 15,
 		"fournisseur_id" => 1,
 		"libelle_court" => "ThAC",
 		"libelle_long" => "Thomann ACStein",
@@ -486,7 +486,7 @@ $produits = array(
 	),
 	array(
 		"id" => 45,
-		"rubrique_id" => 19,
+		"rubrique_id" => 15,
 		"fournisseur_id" => 1,
 		"libelle_court" => "ThZFAN",
 		"libelle_long" => "Thomann Zfan",
@@ -497,7 +497,7 @@ $produits = array(
 	),
 	array(
 		"id" => 46,
-		"rubrique_id" => 20,
+		"rubrique_id" => 16,
 		"fournisseur_id" => 1,
 		"libelle_court" => "ThFL200",
 		"libelle_long" => "Thomann FL200",
@@ -508,7 +508,7 @@ $produits = array(
 	),
 	array(
 		"id" => 47,
-		"rubrique_id" => 20,
+		"rubrique_id" => 16,
 		"fournisseur_id" => 1,
 		"libelle_court" => "MuEX",
 		"libelle_long" => "Muramatsu EX",
@@ -519,7 +519,7 @@ $produits = array(
 	),
 	array(
 		"id" => 48,
-		"rubrique_id" => 20,
+		"rubrique_id" => 16,
 		"fournisseur_id" => 1,
 		"libelle_court" => "PePF505",
 		"libelle_long" => "Pearl PF505",
@@ -530,7 +530,7 @@ $produits = array(
 	),
 	array(
 		"id" => 49,
-		"rubrique_id" => 27,
+		"rubrique_id" => 26,
 		"fournisseur_id" => 1,
 		"libelle_court" => "ETC S4 PAR EA",
 		"libelle_long" => "ETC S4 PAR EA",
@@ -541,7 +541,7 @@ $produits = array(
 	),
 	array(
 		"id" => 50,
-		"rubrique_id" => 27,
+		"rubrique_id" => 26,
 		"fournisseur_id" => 1,
 		"libelle_court" => "Eurolite LED SL-400",
 		"libelle_long" => "Eurolite LED SL-400 DMX Search Light",
@@ -552,7 +552,7 @@ $produits = array(
 	),
 	array(
 		"id" => 51,
-		"rubrique_id" => 27,
+		"rubrique_id" => 26,
 		"fournisseur_id" => 1,
 		"libelle_court" => "Cameo Matrix 10W",
 		"libelle_long" => "Cameo Matrix Panel 10 W RGB",
@@ -563,7 +563,7 @@ $produits = array(
 	),
 	array(
 		"id" => 52,
-		"rubrique_id" => 28,
+		"rubrique_id" => 27,
 		"fournisseur_id" => 1,
 		"libelle_court" => "Stairville 132 LED RGB",
 		"libelle_long" => "Stairville Wild Wash 132 LED RGB",
@@ -574,7 +574,7 @@ $produits = array(
 	),
 	array(
 		"id" => 53,
-		"rubrique_id" => 28,
+		"rubrique_id" => 27,
 		"fournisseur_id" => 1,
 		"libelle_court" => "Martin Atomic",
 		"libelle_long" => "Martin Atomic 3000 LED",
@@ -585,7 +585,7 @@ $produits = array(
 	),
 	array(
 		"id" => 54,
-		"rubrique_id" => 28,
+		"rubrique_id" => 27,
 		"fournisseur_id" => 1,
 		"libelle_court" => "Varytec Colors",
 		"libelle_long" => "Varytec Colors SonicStrobe",
@@ -596,7 +596,7 @@ $produits = array(
 	),
 	array(
 		"id" => 55,
-		"rubrique_id" => 29,
+		"rubrique_id" => 28,
 		"fournisseur_id" => 1,
 		"libelle_court" => "Laserworld DS-1000RGB",
 		"libelle_long" => "Laserworld DS-1000RGB MK3",
@@ -607,7 +607,7 @@ $produits = array(
 	),
 	array(
 		"id" => 56,
-		"rubrique_id" => 29,
+		"rubrique_id" => 28,
 		"fournisseur_id" => 1,
 		"libelle_court" => "ADj Stinger",
 		"libelle_long" => "ADJ Stinger II",
@@ -618,7 +618,7 @@ $produits = array(
 	),
 	array(
 		"id" => 57,
-		"rubrique_id" => 29,
+		"rubrique_id" => 28,
 		"fournisseur_id" => 4,
 		"libelle_court" => "Laserworld PL",
 		"libelle_long" => "Laserworld PL-5000RGB MK2",
@@ -728,7 +728,7 @@ $produits = array(
 	),
 	array(
 		"id" => 67,
-		"rubrique_id" => 12,
+		"rubrique_id" => 6,
 		"fournisseur_id" => 3,
 		"libelle_court" => "Pearl EXX725SBR/C",
 		"libelle_long" => "Pearl EXX725SBR/C Export Aztec Gold",
@@ -739,7 +739,7 @@ $produits = array(
 	),
 	array(
 		"id" => 68,
-		"rubrique_id" => 12,
+		"rubrique_id" => 6,
 		"fournisseur_id" => 3,
 		"libelle_court" => "Tama Star Bubinga",
 		"libelle_long" => "Tama STAR Drum Bubinga White Ebony",
@@ -750,7 +750,7 @@ $produits = array(
 	),
 	array(
 		"id" => 69,
-		"rubrique_id" => 12,
+		"rubrique_id" => 6,
 		"fournisseur_id" => 5,
 		"libelle_court" => "Sonor AQX Jungle",
 		"libelle_long" => "Sonor AQX Jungle Set BOS",
@@ -761,7 +761,7 @@ $produits = array(
 	),
 	array(
 		"id" => 70,
-		"rubrique_id" => 13,
+		"rubrique_id" => 7,
 		"fournisseur_id" => 2,
 		"libelle_court" => "Roland VAD706-GC Bundle",
 		"libelle_long" => "Roland VAD706-GC E-Drum Set Bundle",
@@ -772,7 +772,7 @@ $produits = array(
 	),
 	array(
 		"id" => 71,
-		"rubrique_id" => 13,
+		"rubrique_id" => 7,
 		"fournisseur_id" => 3,
 		"libelle_court" => "Alesis Strike Pro",
 		"libelle_long" => "Alesis Strike Pro Special Edition",
@@ -783,7 +783,7 @@ $produits = array(
 	),
 	array(
 		"id" => 72,
-		"rubrique_id" => 13,
+		"rubrique_id" => 7,
 		"fournisseur_id" => 3,
 		"libelle_court" => "Millenium E-Drum Set",
 		"libelle_long" => "Millenium HD-120 E-Drum Set",
