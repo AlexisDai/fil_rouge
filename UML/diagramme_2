@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-09T08:56:35.156Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36" etag="CtOl3ZcrmSIafOeHcU3_" version="19.0.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-09T09:53:25.691Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36" etag="CXn8Z3WDkESOd0wz8QId" version="19.0.1" type="github" pages="2">
   <diagram id="DiO1FB-chMHH5-HHLX33" name="Page-1">
     <mxGraphModel dx="1498" dy="859" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -29,17 +29,25 @@
           <mxGeometry x="31.25" y="270" width="767.5" height="510" as="geometry" />
         </mxCell>
         <mxCell id="szvbojdEr7eZIrvB9NSX-20" value="&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
-          <mxGeometry x="14" y="850" width="800" height="360" as="geometry" />
+          <mxGeometry x="14" y="850" width="800" height="660" as="geometry" />
         </mxCell>
         <mxCell id="szvbojdEr7eZIrvB9NSX-21" value="Flot alternatifs" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="40" y="820" width="130" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="szvbojdEr7eZIrvB9NSX-22" value="&lt;b style=&quot;text-decoration-line: underline;&quot;&gt;Le client n&#39;est pas enregistré :&lt;/b&gt;&lt;br&gt;Le client se rend sur le hub de connexion et cliques sur &quot; Pas encore client ? &quot;&lt;br&gt;Il saisi alors ses informations pour crée son compte.&lt;br&gt;Le système vérifie la véracité des informations puis crée le compte.&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;u&gt;Le produit recherché n&#39;est plus en stock :&lt;br&gt;&lt;/u&gt;&lt;/b&gt;Le délai de livraison est alors calculé et inscrit dans le détail du produit.&lt;br&gt;Le client peut alors mettre le produit dans le panier et le validera des que le produit sera mis en stock.&lt;br&gt;&lt;br&gt;&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="860" width="740" height="320" as="geometry" />
+        <mxCell id="szvbojdEr7eZIrvB9NSX-22" value="&lt;b style=&quot;text-decoration-line: underline;&quot;&gt;Le client n&#39;est pas enregistré :&lt;/b&gt;&lt;br&gt;Le client se rend sur le hub de connexion et cliques sur &quot; Pas encore client ? &quot;&lt;br&gt;Il saisi alors ses informations pour crée son compte.&lt;br&gt;Le système vérifie la véracité des informations puis crée le compte.&lt;br&gt;Le cas d’utilisation reprend normalement.&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;u&gt;Les informations ne sont pas correct :&lt;br&gt;&lt;/u&gt;&lt;/b&gt;Le système détecte alors des informations incorrect.&lt;br&gt;Le système renvoie sur le formulaire en question et signifie les informations incorrect.&lt;br&gt;Le client corrige alors les erreurs.&lt;br&gt;Ceci se répète jusqu’à ce que le système ne détecte plus d&#39;erreur.&lt;br&gt;Le cas d&#39;utilisation reprend normalement.&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;u&gt;Le produit recherché n&#39;est plus en stock :&lt;br&gt;&lt;/u&gt;&lt;/b&gt;Le délai de livraison est alors calculé et inscrit dans le détail du produit.&lt;br&gt;Le client peut alors mettre le produit dans le panier et le validera des que le produit sera mis en stock.&lt;br&gt;Le cas d&#39;utilisation reprend normalement.&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;u&gt;Les informations bancaires ne sont pas correct:&lt;br&gt;&lt;/u&gt;&lt;/b&gt;Le système détecte alors des informations incorrect.&lt;br&gt;Le système renvoie sur le formulaire en question et signifie les informations incorrect.&lt;br&gt;Le client corrige alors les erreurs.&lt;br&gt;Ceci se répète jusqu’à ce que le système ne détecte plus d&#39;erreur.&lt;br&gt;Le cas d&#39;utilisation reprend normalement.&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;u&gt;Le règlement n&#39;a pas abouti :&lt;br&gt;&lt;/u&gt;&lt;/b&gt;Le cas d&#39;utilisation prend fin.&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;u&gt;Le client peut abandonné à tout moment :&lt;br&gt;&lt;/u&gt;&lt;/b&gt;Le cas d&#39;utilisation prend fin." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="900" width="740" height="530" as="geometry" />
         </mxCell>
         <mxCell id="szvbojdEr7eZIrvB9NSX-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="szvbojdEr7eZIrvB9NSX-14" target="szvbojdEr7eZIrvB9NSX-14">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="-usAX2qW7vgS7nouqSHg" name="Page-2">
+    <mxGraphModel dx="1348" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
       </root>
     </mxGraphModel>
   </diagram>
