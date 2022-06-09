@@ -1,1 +1,49 @@
-<mxfile host="app.diagrams.net" modified="2022-06-09T08:02:21.650Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36" version="19.0.1" etag="Y98YAZLJT9cnYbEHFqk4" type="github"><diagram id="DiO1FB-chMHH5-HHLX33">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-06-09T08:36:53.107Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36" etag="1Ce9sJBKz73enursm-c1" version="19.0.1" type="github">
+  <diagram id="DiO1FB-chMHH5-HHLX33" name="Page-1">
+    <mxGraphModel dx="1348" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="szvbojdEr7eZIrvB9NSX-1" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry width="820" height="1160" as="geometry" />
+        </mxCell>
+        <mxCell id="szvbojdEr7eZIrvB9NSX-2" value="Cas d&#39;utilisation lors d&#39;un achat sur le site" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="10" width="680" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="szvbojdEr7eZIrvB9NSX-3" value="Flux d&#39;évènement" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="50" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="szvbojdEr7eZIrvB9NSX-4" value="&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="10" y="80" width="800" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="szvbojdEr7eZIrvB9NSX-6" value="Flot nominal" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="230" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="szvbojdEr7eZIrvB9NSX-9" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="630" width="800" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="szvbojdEr7eZIrvB9NSX-7" value="&lt;p style=&quot;line-height: 1.7;&quot;&gt;L&#39;employé/Bénévole recherche la fiche du client.&lt;br&gt;Le système lui affiches la fiche du client.&lt;br&gt;L&#39;employé/Bénévole vérifie si l&#39;usager peut emprunter.&lt;br&gt;L&#39;employé/Bénévole vérifie si l&#39;usager à une carte de lecteur.&lt;br&gt;Il crée alors une fiche d&#39;emprunt qui sera lié au livre et à l&#39;usager.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="25" y="630" width="770" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="szvbojdEr7eZIrvB9NSX-10" value="Flot alternatifs" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="760" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="szvbojdEr7eZIrvB9NSX-11" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="790" width="800" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="szvbojdEr7eZIrvB9NSX-12" value="&lt;b&gt;&lt;u&gt;L&#39;usager n&#39;est pas enregistré :&amp;nbsp;&lt;br&gt;&lt;br&gt;&lt;/u&gt;&lt;/b&gt;L&#39;employé enregistre alors le client et lui crée une carte de lecteur&lt;br&gt;//&amp;nbsp;Une fois cette action menée, le déroulement pour l&#39;emprunt peut reprendre //&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;u&gt;L&#39;usager ne peux pas emprunter (trop d&#39;emprunt) :&lt;br&gt;&lt;br&gt;&lt;/u&gt;&lt;/b&gt;L&#39;employé arrête alors l&#39;emprunt et avertit l&#39;usager.&lt;br&gt;L&#39;usager doit donc rendre au moins un livre.&lt;br&gt;//&amp;nbsp;Une fois cette action menée, le déroulement pour l&#39;emprunt peut reprendre //&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;u&gt;L&#39;usager n&#39;a plus ses données a jour :&lt;br&gt;&lt;br&gt;&lt;/u&gt;&lt;/b&gt;L&#39;employé passe en revu les données désuètes.&lt;br&gt;L&#39;employé met a jour la fiche client avec les coordonnées mis a jour.&lt;br&gt;//&amp;nbsp;Une fois cette action menée, le déroulement pour l&#39;emprunt peut reprendre //" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="810" width="750" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="szvbojdEr7eZIrvB9NSX-13" value="&lt;b&gt;&lt;u&gt;Conditions :&lt;br&gt;&lt;/u&gt;&lt;/b&gt;Le client est déjà enregistré en tant que client.&lt;br&gt;Les produits sont disponibles.&lt;br&gt;&lt;b&gt;&lt;u&gt;Résultats :&lt;br&gt;&lt;/u&gt;&lt;/b&gt;Une commande est crée, avec un numéro de commande, une date de livraison.&lt;br&gt;Une facture est crée avec les coordonnées du client et le détail de la commande.&lt;br&gt;Les coordonnées du client sont mis a jours.&lt;br&gt;Le stock produit est mis a jour." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="32.5" y="91" width="765" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="szvbojdEr7eZIrvB9NSX-14" value="&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="14" y="260" width="800" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="szvbojdEr7eZIrvB9NSX-15" value="&lt;p style=&quot;line-height: 1.4;&quot;&gt;&lt;/p&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;--- Le client se rend sur le site.&lt;/span&gt;&lt;br&gt;&lt;/div&gt;- Le système lui affiches la page d&#39;accueil du site internet.&lt;br&gt;--- Le client souhaite se connecter.&lt;br&gt;- Le système lui affiche le hub de connexion.&lt;br&gt;--- Le client rentre ses identifiants de connexion.&lt;br&gt;- Le système lui affiches la page d&#39;accueil du site internet avec la mention connecté et la possibilité de voir son profil.&lt;br&gt;--- Le client parcours alors les différentes catégorie et sélectionne une catégorie.&lt;br&gt;Le système lui affiches alors les sous catégories lié a la catégorie choisi.&lt;br&gt;Le client sélectionne alors une sous catégories.&lt;br&gt;Le système lui affiches alors les produits lié a cette sous-catégorie.&lt;br&gt;Le client parcours le catalogue des produits et choisi le produit souhaité.&lt;br&gt;Le système lui affiches alors le détail du produit.&lt;br&gt;Le client met cet article dans son panier et clique ensuite sur le panier.&lt;br&gt;Le système lui affiches alors le récapitulatif du panier.&lt;br&gt;Le client clique sur valider le panier et procéder au paiement.&lt;br&gt;Le système affiches alors la page de paiements.&lt;br&gt;Le client saisie désormais les informations de livraison puis ses coordonnées bancaires.&lt;br&gt;Le système vérifie la véracité des coordonnées saisi et valide alors la commande.&lt;br&gt;Le client est redirigé sur une page qui indique sur la commande est effectué.&lt;br&gt;Le client reçoit alors par mail la confirmation de la commande et la facture.&lt;p&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="265" width="767.5" height="350" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
