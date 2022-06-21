@@ -31,13 +31,13 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/produits/{id}', name: 'produit')]
-    public function produits(ProduitRepository $repo3, $id): Response
-    {    
-        $produit = $repo3->findBy(array('rubrique' => $id ));
+    // #[Route('/produits/{id}', name: 'produit')]
+    // public function produits(ProduitRepository $repo3, $id): Response
+    // {    
+    //     $produit = $repo3->findBy(array('rubrique' => $id ));
 
-        return $this->render('home/produit.html.twig', [
-            'produit' => $produit,       
-        ]);
-    }
+    //     return $this->render('produit/index.html.twig', [
+    //         'produit' => $produit,       
+    //     ]);
+    // }
 }

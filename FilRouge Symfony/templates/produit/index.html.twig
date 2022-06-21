@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produit index{% endblock %}
+
+{% block body %}
+
+    <a href="{{ path('rubrique') }}">Rurbiques</a>
+    <a href="{{ path('app_produit_new') }}">Nouveau</a>
+
+    <h1>Produit index</h1>
+
+{# {% for pro in produit %} #}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>LibelleCourt</th>
+                <th>LibelleLong</th>
+                <th>ReferenceFournisseur</th>
+                <th>Photo</th>
+                <th>PrixAchat</th>
+                <th>PrixHorsTaxe</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produit in produits %}
+            <tr>
+                <td>{{ produit.id }}</td>
+                <td>{{ produit.libelleCourt }}</td>
+                <td>{{ produit.libelleLong }}</td>
+                <td>{{ produit.referenceFournisseur }}</td>
+                <td>{{ produit.photo }}</td>
+                <td>{{ produit.prixAchat }}</td>
+                <td>{{ produit.prixHorsTaxe }}</td>
+                <td>
+                    <a href="{{ path('app_produit_show', {'id': produit.id}) }}">Détail</a> 
+                                    {# {'idi': produit.id} Récupère le chemin pour afficher le produit par son id #}
+                    {# <a href="{{ path('app_produit_edit', {'id': produit.id}) }}">Modifier</a> #}
+                                    {# {'idi': produit.id} Récupère le chemin pour afficher le produit par son id #}
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+                    {# Au cas ou il ne trouve pas de produit #}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{# {% endfor %} #}
+
+    {# <a href="{{ path('app_produit_new') }}">Nouveau</a> #}
+
+
+{% endblock %}

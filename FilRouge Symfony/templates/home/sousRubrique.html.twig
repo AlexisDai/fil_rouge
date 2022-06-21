@@ -7,10 +7,13 @@
 
 {% for ssRub in sousRubrique %}
     <div>
-        <a href="{{ path('produit', {'id':ssRub.id}) }}">
+        <a href="{{ path('app_produit_index', {'id':ssRub.id}) }}">
             {{ ssRub.nom }}
         </a>
     </div>
 {% endfor %}
+
+      <a type="button" onclick="history.go(-1)">Retour</a>
+
 
 {% endblock %}
