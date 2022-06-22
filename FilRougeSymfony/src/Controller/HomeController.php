@@ -10,6 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
+    
     #[Route('/rubrique', name: 'rubrique')]
     public function index(RubriqueRepository $repo): Response
     {

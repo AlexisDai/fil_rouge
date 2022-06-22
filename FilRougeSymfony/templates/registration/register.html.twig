@@ -11,6 +11,8 @@
             label: 'Password'
         }) }}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+    {{ form_end(registrationForm) }} 
+    <button type="submit" class="btn btn-primary">Register</button>
+     Vous avez un compte ?<a href="{{ path('app_login') }}"> Connectez-vous !</a>
+
 {% endblock %}

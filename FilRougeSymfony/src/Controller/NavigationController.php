@@ -10,12 +10,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class NavigationController extends AbstractController
 {
-    /**
+        /**
          * @Route("/", name="home")
          */
         public function home()
         {
-                return $this->render('navigation/home.html.twig');
+                return $this->redirectToRoute('rubrique');
         }
 
         /**

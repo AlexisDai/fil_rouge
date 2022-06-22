@@ -33,8 +33,8 @@
         
         <div class="navdroite">
             <ul>
-                <li><a href="#" ><i class="fa-solid fa-user"></i></a></li>          
-                <li><a href="#" ><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="{{ path('app_login') }}" ><i class="fa-solid fa-user"></i></a></li>          
+                <li><a href="{{ path('app_cart') }}" ><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
         </div>
     </div>
@@ -55,6 +55,12 @@
             {% endblock %}
 
             {% block produit %}
+            {% endblock %}
+
+            {% block panier %}
+            {% endblock %}
+
+            {% block admin %}
             {% endblock %}
 
             <nav class="navbar navbar-light bg-light">
