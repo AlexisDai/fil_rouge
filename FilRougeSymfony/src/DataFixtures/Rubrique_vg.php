@@ -10,7 +10,7 @@ $rubriques = [
 			],
 			[
 				"nom_rubrique" => "Guitares Classiques",
-				"photo_rubrique" => "guitares_classique.jpeg",
+				"photo_rubrique" => "guitare_classique.jpeg",
 			],
 			[
 				"nom_rubrique" => "Guitares de Voyage",
@@ -132,7 +132,7 @@ $rubriques = [
 		"sousrubriques" => [
 			[
 				"nom_rubrique" => "Suports",
-				"photo_rubrique" => "support.jpeg",
+				"photo_rubrique" => "support.png",
 			],
 			[
 				"nom_rubrique" => "Sièges",

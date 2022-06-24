@@ -3,50 +3,40 @@
 {% block title %}Détails{% endblock %}
 
 {% block produit %}
-    <h1>Produit</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ produit.id }}</td>
-            </tr>
-            <tr>
-                <th>LibelleCourt</th>
-                <td>{{ produit.libelleCourt }}</td>
-            </tr>
-            <tr>
-                <th>LibelleLong</th>
-                <td>{{ produit.libelleLong }}</td>
-            </tr>
-            <tr>
-                <th>ReferenceFournisseur</th>
-                <td>{{ produit.referenceFournisseur }}</td>
-            </tr>
-            <tr>
-                <th>Photo</th>
-                <td>{{ produit.photo }}</td>
-            </tr>
-            <tr>
-                <th>PrixAchat</th>
-                <td>{{ produit.prixAchat }}</td>
-            </tr>
-            <tr>
-                <th>PrixHorsTaxe</th>
-                <td>{{ produit.prixHorsTaxe }}</td>
-            </tr>
-        </tbody>
-    </table>
     
-    <a href="{{ path('app_produit_index', {'id': produit.rubrique.id}) }}">Retour</a>
-                                                 {# produit.rubrique.id = le chemin complet pour le retour #}
-      {# <a type="button" onclick="history.go(-1)">Retour</a> #}
+        <div class="row g-0 bg-white">
+            <h1 class="fw-bold mx-3">{{produit.libelleLong}}</h1>
+            <img src="/upload/img/produit/{{produit.photo}}" alt="{{produit.libelleCourt}}" title="{{produit.libelleCourt}}" class="img-fluid col-6">
 
-    <a href="{{ path('app_produit_edit', {'id': produit.id}) }}">Modifier</a>
-                                            {# {'idi': produit.id} Récupère le chemin pour afficher le produit par son id #}
+            <div class="col-6 text-center">
+                
+                <div class="fs-1 fw-bold"> {{ produit.prixHorsTaxe }} €</div>
+                <p class="fs-4">Tous les prix TVA incl.(TTC)<p>
+                <p class="fs-4 text-success">Disponible immédiatement<p>
+                <p class="fs-4">Livraison gratuite estimée entre ******* et *******.<p>
+                <a href="{{ path('cart_add', {'id': produit.id }) }}" class="btn btn-primary rounded-pill"> Ajouter au panier </a>
+                <hr>
+
+                <p class="fs-4"><i class="fa-solid fa-eye"></i> 81 visiteurs regardent ce produit</p>
+                <p class="fs-4"><i class="fa-solid fa-medal"></i> TOP DES VENTES</p>
+                <hr>
+                                                    
+                <p class="fs-5 fw-bold">Garantie 30 jours satisfaits ou rembousés</p>
+
+                {# produit.rubrique.id = le chemin complet pour le retour #}
+                <a href="{{ path('app_produit_index', {'id': produit.rubrique.id}) }}" class="btn btn-outline-secondary">Retour</a>   
+                
+            </div>
+        </div>
     
-    {{ include('produit/_delete_form.html.twig') }}
+    {% if is_granted('ROLE_ADMIN') %}
+        {# {'id': produit.id} Récupère le chemin pour afficher le produit par son id #}
+        <a href="{{ path('app_produit_edit', {'id': produit.id}) }}">Modifier</a>
+    
+        {{ include('produit/_delete_form.html.twig') }}
+    {% endif %}
 
-    <a href="{{ path('cart_add', {'id': produit.id }) }}" class="btn btn-success"> Ajouter </a>
+    
     
 {% endblock %}
