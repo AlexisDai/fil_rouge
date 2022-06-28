@@ -25,7 +25,7 @@ class Produit
     private $libelleCourt;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=1500)
      */
     private $libelleLong;
 
