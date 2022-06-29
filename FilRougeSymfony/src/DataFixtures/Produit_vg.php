@@ -460,8 +460,7 @@ $produits = array(
 		"fournisseur_id" => 1,
 		"libelle_court" => "Harley Benton ST-20HSS SBK Standard Series",
 		"libelle_long" => " 
-		Guitare électrique
-		
+			Guitare électrique		
 			Corps en tilleul
 			Manche vissé en érable
 			Touche en amarante

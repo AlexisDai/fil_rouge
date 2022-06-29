@@ -9,7 +9,7 @@
             <h1 class="fw-bold mx-3">{{produit.libelleCourt}}</h1>
             <img src="/upload/img/produit/{{produit.photo}}" alt="{{produit.libelleCourt}}" title="{{produit.libelleCourt}}" class="img-fluid col-6">
 
-            <div class="col-6 text-center">
+            <div class="col-6 text-center sticky-top">
                 
                 <div class="fs-1 fw-bold"> {{ produit.prixHorsTaxe }} €</div>
                 <p class="fs-4">Tous les prix TVA incl.(TTC)<p>
@@ -29,14 +29,17 @@
                 
             </div>
 
-            <p class="h5 col-5">{{ produit.libelleLong }}</p>
+            <p class="fs-4 col-6 text-center">{{ produit.libelleLong }}</p>
         </div>
     
     {% if is_granted('ROLE_ADMIN') %}
-        {# {'id': produit.id} Récupère le chemin pour afficher le produit par son id #}
-        <a href="{{ path('app_produit_edit', {'id': produit.id}) }}">Modifier</a>
-    
-        {{ include('produit/_delete_form.html.twig') }}
+
+        <div class="text-end mx-3">
+            {# {'id': produit.id} Récupère le chemin pour afficher le produit par son id #}
+            <a href="{{ path('app_produit_edit', {'id': produit.id}) }}" class="btn btn-primary mt-2">Modifier</a>
+        
+            {{ include('produit/_delete_form.html.twig') }}
+        </div>
     {% endif %}
 
     

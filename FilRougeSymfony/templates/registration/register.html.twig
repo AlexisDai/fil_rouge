@@ -10,9 +10,9 @@
         {{ form_row(registrationForm.plainPassword, {
             label: 'Mot de passe'
         }) }}
-
+        <button type="submit" class="btn btn-primary">S'inscrire</button>
     {{ form_end(registrationForm) }} 
-    <button type="submit" class="btn btn-primary">S'inscrire</button>
+    
      Vous avez un compte ?<a href="{{ path('app_login') }}"> Connectez-vous !</a>
 
 {% endblock %}

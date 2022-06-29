@@ -8,6 +8,7 @@ use App\Entity\Fournisseur;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 
@@ -17,7 +18,9 @@ class ProduitType extends AbstractType
     {
         $builder
             ->add('libelleCourt')
-            ->add('libelleLong')
+            ->add('libelleLong', TextareaType::class, [
+                'attr' => ['rows'=>20]
+            ])
             ->add('referenceFournisseur')
             ->add('photo')
             ->add('prixAchat')
