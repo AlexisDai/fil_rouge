@@ -6,12 +6,19 @@
 
     <h1>Votre panier</h1>
 
+<div class="container-fluid g-0" id="bodypanier">
+<div class="row">
+<div class="col-9">
+
+
+
     {# Si le nombre de produit dans le panier > 0 alors on affiche le tableau #}
     {% if items | length > 0 %}
         <table class="table">
             <thead>
                 <tr>
-                    <th>Produit</th>
+                    <th class="col-4">Produit</th>
+                    <th></th>
                     <th>Prix</th>
                     <th>Quantité</th>
                     <th>Total</th>
@@ -22,10 +29,11 @@
             {# Pour chaque produit dans le panier on affiche son nom, son prix, sa quantité, et son total #}
                 {% for item in items %}
                     <tr>
-                        <td>{{ item.produit.libelleLong }}</td>
-                        <td>{{ item.produit.prixHorsTaxe }}</td>
+                        <td id="bgpanier"><img src="/upload/img/produit/{{ item.produit.photo }}" class="w-25"></td>
+                        <td>{{ item.produit.LibelleCourt }}</td>
+                        <td>{{ item.produit.prixHorsTaxe }} €</td>
                         <td>{{ item.quantity }}</td>
-                        <td>{{ item.produit.prixHorsTaxe * item.quantity }}</td>
+                        <td>{{ item.produit.prixHorsTaxe * item.quantity }} €</td>
                         <td>
                         {# Bouton pour supprimer un produit du panier #}
                             <a href="{{ path('cart_remove', {'id': item.produit.id }) }}" class="btn btn-danger btn-sm">
@@ -38,15 +46,26 @@
             <tfoot>
                 <tr>
                     <td colspan="3" class="text-end">Total :</td>
-                    <td>{{ total }}</td>
+                    <td>{{ total }} €</td>
                     <td></td>
                 </tr>
             </tfoot>
         </table>
+        </div>
+        <div class="col-3">
+            <div class="cardpanier">
+                <p> Montant total : {{ total }} €</p>
+                <button class="btnpayer">Payer</button>
+            </div>
+        </div>
 
 {# Si le nombre de produit dans le panier < 0 alors on affiche que le panier est vide #}
     {% else %}
-        <p>Votre panier est vide !</p>
+        <div class="paniervide">
+            <p>Votre panier est vide !</p>
+        </div>
     {% endif %}
 
+</div>
+</div>
 {% endblock %}
