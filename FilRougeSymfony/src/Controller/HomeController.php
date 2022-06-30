@@ -23,11 +23,13 @@ class HomeController extends AbstractController
 
     #[Route('/sousRubrique/{id}', name: 'sousRubrique')]
     public function sousRubrique(RubriqueRepository $repo2, $id): Response
-    {    
+    { 
+        $rubriques = $repo2->findBy(array('rubrique' => null));   
         $ssRub = $repo2->findBy(array('rubrique' => $id ));
 
         return $this->render('home/sousRubrique.html.twig', [
-            'sousRubrique' => $ssRub,       
+            'sousRubrique' => $ssRub,
+            'rubrique'     => $rubriques       
         ]);
     }
 

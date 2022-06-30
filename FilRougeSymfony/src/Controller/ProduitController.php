@@ -3,24 +3,30 @@
 namespace App\Controller;
 
 use App\Entity\Produit;
+use App\Entity\Rubrique;
 use App\Form\ProduitType;
 use App\Repository\ProduitRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\RubriqueRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/produit')]
 class ProduitController extends AbstractController
 {
 
     #[Route('/_{id}', name: 'app_produit_index', methods: ['GET'])]
-    public function produits(ProduitRepository $repo3, $id): Response
+    public function produits(ProduitRepository $repo3, RubriqueRepository $repo4, Rubrique $rub ,$id): Response
     {    
         $produit = $repo3->findBy(array('rubrique' => $id ));
 
+        $rubriques = $repo4->findBy(array('rubrique' => null));
+
         return $this->render('produit/index.html.twig', [
-            'produits' => $produit,       
+            'produits' => $produit,
+            'rubrique' => $rubriques,
+            'rub'      => $rub     
         ]);
     }
 
@@ -44,10 +50,13 @@ class ProduitController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_produit_show', methods: ['GET'])]
-    public function show(Produit $produit): Response
+    public function show(Produit $produit, RubriqueRepository $repo): Response
     {
+        $rubriques = $repo->findBy(array('rubrique' => null));
+
         return $this->render('produit/show.html.twig', [
             'produit' => $produit,
+            'rubrique' => $rubriques,
         ]);
     }
 

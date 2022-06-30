@@ -763,7 +763,7 @@ $produits = array(
 			Finition: Noir brillant 
 		",
 		"reference_fournisseur" => "Musique",
-		"photo_produit" => "Yamaha b3 PE.jgp",
+		"photo_produit" => "Yamaha b3 PE.jpg",
 		"prix_achat" => 4825.0000,
 		"prix_hors_taxe" => 5790.0000,
 	),
@@ -1111,7 +1111,7 @@ $produits = array(
 		
 		",
 		"reference_fournisseur" => "Le Musique en ville",
-		"photo_produit" => "Thomman TR200BB.jpg",
+		"photo_produit" => "Thomann TR200BB.jpg",
 		"prix_achat" => 132.5000,
 		"prix_hors_taxe" => 159.0000,
 	),
