@@ -13,7 +13,8 @@
 }
 
 #bgproduit{
-    overflow-x: hidden;
+    /* overflow-x: hidden */
+    max-width: 90%;
 }
 /* ***************************************************************************************************************
 ********************************************     HEADER     ******************************************************
@@ -467,9 +468,13 @@
     text-align: center;
 }
 
- .paniervide, #bodylogin{
+ .paniervide{
     min-height: 20vh;
 } 
+
+#bodylogin{
+    min-height: 40vh;
+}
 
 .paniervide{
     display: flex;
@@ -587,7 +592,7 @@ li[tabindex]:before {
      float:right;
      padding-right:0.5em;
      font-weight:bold;
-     color:white;
+     color: #F3F3F3;
      font-size:120%;
      line-height:26px;
 }
@@ -608,19 +613,231 @@ li:focus ul li a {
 
 
 /* ***************************************************************************************************************
+****************************************     INTERFACE USERS       ***********************************************
+*****************************************************************************************************************/
+
+.espaceclient, .espaceclient2{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.espaceclient2 input{
+    width: 100%;
+}
+
+#formespaceclient{
+    background-color: #F3F3F3;
+    border: none;
+}
+
+
+/* ***************************************************************************************************************
+******************************************     CARTE PRODUIT       ***********************************************
+*****************************************************************************************************************/
+
+
+.card__image_produit img {
+    height: auto;
+    width: 40%;
+    vertical-align: middle;
+  }
+  
+  .cards_produit {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cards__item_produit {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .card_produit {
+    background-color: white;
+    border-radius: 0.50rem;
+    box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card__content_produit {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: center;    
+    padding: 1rem;
+  }
+
+  .card__content_produit a{
+    text-decoration: none;
+    color: rgb(90, 90, 90);
+    width: 100%;
+    height: auto;
+}
+
+  .card__content_produit a:hover {
+      color: #17C4FB;
+      transition: 0.2s ease-in-out;
+  }
+
+  .card__content_produit i{
+      font-size: 36px;
+      color: #1797BF;
+      margin-left: 90%;
+  }
+
+  .card__title_produit {
+    color: gray;
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+  
+  .card__text_produit {
+    flex: 1 1 auto;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+  }
+
+
+/* ***************************************************************************************************************
 *****************************************     MEDIA QUERIES       ************************************************
 *****************************************************************************************************************/
 
 
+@media all and (max-width: 300px){
 
-@media all and (max-width: 480px){
+    .cardphare3 h3{
+        margin-top: 300%;
+        margin-left: 50%;
+    }
 
-    .navmilieu a{
+    .cardcontent img{
+        width: 50%;
+    }
+
+    .cardcontent h2{
+        font-size: 18px;
         text-align: center;
     }
 
+    #carouselExampleCaptions{
+        visibility: hidden;
+        display: none !important;
+        width: 0%;
+        margin: 0%;
+        padding: 0%;
+    }
+
+    .panierinterieur, .panierheader, .panierfdp{
+        font-size: 7px !important;
+    }
+
+    #imgproduitpanier{
+        width: 100% !important;
+    }
+
+    #bgpanier{
+        background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 80%, rgb(243,243,243,1) 100%);
+    }
+
+    #nomproduit{
+        font-size: 14px !important;
+    }
+
+    #btnajouter{
+        font-size: 14px;
+    }
+
+    .card__content_produit i{
+        font-size: 26px;
+    }
+}
+
+@media all and (min-width: 300px) and (max-width: 350px){
+
+        .cardphare3 h3{
+            margin-top: 260%;
+            margin-left: 50%;
+        }
+
+        #carouselExampleCaptions{
+            visibility: hidden;
+            display: none !important;
+            width: 0%;
+            margin: 0%;
+            padding: 0%;
+        }
+
+        #bgpanier{
+            background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 80%, rgb(243,243,243,1) 100%);
+        }
+
+        #btnajouter{
+            font-size: 14px;
+        }
+
+        .card__content_produit i{
+            font-size: 26px;
+        }
+
+        .panierfooter1 a, .panierfooter2 a{
+            font-size: 20px;
+        }
+
+        .panierinterieur, .panierheader, .panierfdp{
+            font-size: 8px !important;
+        }
+    }
+
+@media all and (min-width: 350px) and (max-width: 400px){
+
+    .cardphare3 h3{
+        margin-top: 220%;
+        margin-left: 50%;
+    }
+
+    #carouselExampleCaptions{
+        visibility: hidden;
+        display: none !important;
+        width: 0%;
+        margin: 0%;
+        padding: 0%;
+    }
+
+    #imgproduitpanier{
+        width: 100% !important;
+    }
+
+    #bgpanier{
+        background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 80%, rgb(243,243,243,1) 100%);
+    }   
+
+    .panierfooter1 a, .panierfooter2 a{
+        font-size: 20px;
+    }
+}
+
+@media all and (max-width: 480px){
+
     .container1{
-        height: 30vh;
+        min-height: 40vh;
+    }
+
+    .container1 .navmilieu a{
+        text-align: center;
+        font-size: 35px;
+    }
+
+    .container1 i{
+        font-size: 20px;
     }
 
     .maintitle{
@@ -639,12 +856,16 @@ li:focus ul li a {
         width: 100%;
     }
 
+    .footermilieu li, .footerdroite li{
+        font-size: 40px;
+    }
+
     .footerdroite{
         text-align: center;
     }
 
     .cardpanier .btnpayer{
-        width: 100%;
+        width: 50%;
     }
 
     #bodypanier{
@@ -661,6 +882,43 @@ li:focus ul li a {
         font-size: 15px;
     }
 
+    #imgproduit, #sidebarproduit{
+        width: 100%;
+        position: relative;
+    }
+    #bgproduit, #cheminproduit{
+        margin-left: 5%;
+    }
+
+    .footergauche li{
+        font-size: 18px;
+    }
+
+    #cardpaniercenter{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #imgproduitpanier{
+        width: 100% !important;
+    }
+
+    .panierinterieur, .panierheader, .panierfdp{
+        font-size: 12px;
+    }
+
+    #imgproduitcarte{
+        width: 75%;
+    }
+
+    #nomproduit{
+        font-size: 18px !important;
+    }
+
+    #prixproduit{
+        font-size: 24px !important;
+    }
 }
 
 @media all and (min-width: 480px) and (max-width: 720px){
@@ -685,11 +943,15 @@ li:focus ul li a {
         width: 100%;
     }
 
+    .footergauche li{
+        font-size: 18px;
+        color: red;
+    }
+
     .footerdroite{
         text-align: center;
     }
 
-    
     .cardpanier .btnpayer{
         width: 50%;
     }
@@ -698,8 +960,37 @@ li:focus ul li a {
     #carouselExampleCaptions h5 {
         font-size: 18px;
     }
-}
 
+    #imgproduit, #sidebarproduit{
+        width: 100%;
+        position: relative;
+    }
+    #bgproduit, #cheminproduit{
+        margin-left: 5%;
+    }
+
+    #cardpaniercenter{
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+
+    #imgproduitpanier{
+        width: 50% !important;
+    }
+
+    #imgproduitcarte{
+        width: 50%;
+    }
+
+    #nomproduit{
+        font-size: 18px !important;
+    }
+
+    #prixproduit{
+        font-size: 28px !important;
+    }
+}
 
 @media all and (min-width: 720px) and (max-width: 1360px){
 
@@ -736,5 +1027,29 @@ li:focus ul li a {
     #carouselExampleCaptions h5 {
         font-size: 30px;
     }
-}  
 
+    #imgproduitpanier{
+        width: 50% !important;
+    }
+
+    #imgproduitcarte{
+        width: auto;
+        height: 100%;
+    }
+
+    #nomproduit{
+        font-size: 18px !important;
+    }
+
+    #prixproduit{
+        font-size: 28px !important;
+    }
+}
+
+@media all and (min-width: 1360px) and (max-width: 2000px){
+
+    #imgproduitpanier{
+        width: 50% !important;
+    }
+
+}
