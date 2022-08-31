@@ -17,7 +17,7 @@ class MailerController extends AbstractController
     #[Route('/contact', name: 'app_mailer')]
     public function sendEmail(MailerInterface $mailer, Request $request, RubriqueRepository $repo): Response
     {
-        //Attention, nécessite d'avoir MailHog installé pour recevoir les mails + changer le MAILER_DSN dans .env avec smtp://localhost:1025
+        //Attention, nécessite d'avoir MailHog installé pour recevoir les mails
 
         $rubriques = $repo->findBy(array('rubrique' => null));
 
