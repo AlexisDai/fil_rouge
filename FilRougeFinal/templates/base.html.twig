@@ -135,6 +135,9 @@ Vous n'avez pas de compte ?<a href="{{ path('app_register') }}"> Inscivez-vous !
             {% block rubrique %}
             {% endblock %}
 
+            {% block paiement %}
+            {% endblock %}
+
             {% block mail %}
             {% endblock %}
 
@@ -178,7 +181,7 @@ Vous n'avez pas de compte ?<a href="{{ path('app_register') }}"> Inscivez-vous !
                                 <li><a href="#"><i class="fa-solid fa-circle-info"></i> Politiques de confidentialité</a></li>
                                 <li><a href="#"><i class="fa-solid fa-location-pin"></i> 73 Boulevard Bertin, 44432 Tessier</a></li>
                                 <li><a href="#"><i class="fa-solid fa-envelope"></i> BlueVillage@ex.com</a></li>
-                                <li><a href="{{ path('app_mailer') }}">Contactez nous !</li>
+                                <li><a href="{{ path('app_mailer') }}">Contactez nous !</a></li>
                             </ul>
                         </div>
 

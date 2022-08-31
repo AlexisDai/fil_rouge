@@ -6,3 +6,11 @@ $("#new_edit_utilisateur").on('submit', function(){
         return false;
     }
 })
+        
+
+    document.getElementById('btnpayernonvalide').onclick = function() {
+    {
+        console.log('Check');
+        document.querySelector('.msgconnexion').style.opacity = "1";
+    } 
+    };
