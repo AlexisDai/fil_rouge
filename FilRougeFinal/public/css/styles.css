@@ -40,9 +40,8 @@
     font-size: 48px;
     color: #17C4FB;
     font-weight: 700;
-    -webkit-text-stroke: 1px black; /* contour de la police */
+    -webkit-text-stroke: 0.1px black; /* contour de la police */
     text-decoration: none;
-    text-shadow: 0 5px 10px black; /* ombre du texte */
 
 }
 
@@ -155,8 +154,7 @@
 .maintitle h2{ /* titre "Nos Catégories" */
     font-size: 48px;
     font-weight: 700;
-    -webkit-text-stroke: 1px black; /* contours noir du texte */
-    text-shadow: 0 5px 30px #8a8a8a; /* ombre du texte */
+    -webkit-text-stroke: 0.1px black; /* contours noir du texte */
 }
 
 .cardcomplete{ /* card complete des categories */
@@ -423,7 +421,7 @@
     font-size: 48px;
     color: #17C4FB;
     font-weight: 700;
-    -webkit-text-stroke: 1px black; /* contours noir du texte */
+    -webkit-text-stroke: 0.1px black; /* contours noir du texte */
     margin-left: 2%;
     margin-top: 2%;
 }
@@ -563,7 +561,7 @@
 .panierfooter2 h3{ /* Texte "Informations sur l'achat" */
     color:#17C4FB;
     font-size: 38px;
-    -webkit-text-stroke: 1px black; /* contours noir du texte */
+    -webkit-text-stroke: 0.1px black; /* contours noir du texte */
 }
 
 .panierfooter2 p{
