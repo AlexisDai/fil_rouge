@@ -16,7 +16,11 @@
     max-width: 90%;
 }
 
-
+table { /* Tableau des différentes données */
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
 /* ***************************************************************************************************************
 ********************************************     HEADER     ******************************************************
 *****************************************************************************************************************/
@@ -26,7 +30,7 @@
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
-    height: 20vh;
+    min-height: 30vh;
     width: 100%;
 }
 
@@ -330,7 +334,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    height: 30vh;
+    min-height: 30vh;
     width: 100%; 
     background: linear-gradient(0deg, rgba(23,196,251,1) 0%, #F3F3F3 90%, #F3F3F3 100%); /* effet fondu sur le footer */
 }
@@ -1273,3 +1277,10 @@ li:focus ul li a {
         width: 20% !important;
     }
 }
+
+@media all and (max-height: 900px){   /* media queries pour les ecrans petite hauteur */
+
+    .footergauche li{
+        font-size: 18px;
+    }
+} 
