@@ -2,11 +2,11 @@
 
 -- Chiffre d'affaires mois par mois pour une année sélectionnée
 
-SELECT MONTH(date) AS 'Mois', SUM(prix_vente*quantite_article) AS 'CA' 
+SELECT DATE_FORMAT(commande.date, '%M %Y') AS 'Mois',  SUM(prix_vente*quantite_article) AS 'CA' 
 FROM detail_commande
 JOIN commande ON detail_commande.commande_id = commande.id
-WHERE year(date) = 2022
-GROUP BY MONTH(date);
+WHERE year(commande.date) = 2022
+GROUP BY MONTH(commande.date);
 
 -- Chiffre d'affaires généré pour un fournisseur
 
@@ -18,7 +18,7 @@ GROUP BY fournisseur.nom;
 
 -- TOP 10 des produits les plus commandés pour une année sélectionnée (référence et nom du produit, quantité commandée, fournisseur)
 
-SELECT libelle_court AS 'Référence', libelle_long AS 'Nom du produit', qte_art AS 'Quantité Commandée', nom_fou AS 'Nom du Fournisseur'
+SELECT libelle_court AS 'Référence', libelle_long AS 'Nom du produit', quantite_article AS 'Quantité Commandée', fournisseur.nom AS 'Nom du Fournisseur'
 FROM detail_commande
 JOIN produit ON detail_commande.produit_id = produit.id
 JOIN fournisseur ON produit.fournisseur_id = fournisseur.id
@@ -28,14 +28,14 @@ LIMIT 10;
 
 -- TOP 10 des produits les plus rémunérateurs pour une année sélectionnée (référence et nom du produit, marge, fournisseur)
 
-SELECT libelle_court AS 'Référence', libelle_long AS 'Nom du Produit', SUM(pri_ht_pro-pri_ach_pro) AS 'Marge', nom_fou AS 'Fournisseur'
+SELECT libelle_court AS 'Référence', libelle_long AS 'Nom du Produit', SUM(produit.prix_hors_taxe-produit.prix_achat) AS 'Marge', fournisseur.nom AS 'Fournisseur'
 FROM detail_commande
 JOIN commande ON detail_commande.commande_id = commande.id
 JOIN produit ON detail_commande.produit_id = produit.id
 JOIN fournisseur ON produit.fournisseur_id = fournisseur.id
 WHERE YEAR(commande.date) = 2022
 GROUP BY detail_commande.id
-ORDER BY SUM(prix_achat-prix_hors_taxe) DESC
+ORDER BY SUM(produit.prix_hors_taxe-produit.prix_achat) DESC
 LIMIT 10;
 
 -- Top 10 des clients en nombre de commandes ou chiffre d'affaires
@@ -58,7 +58,7 @@ GROUP BY client.categorie;
 
 -- Nombre de commandes en cours de livraison.
 
-SELECT count(commande.id) AS 'Nombre de commande en cours de livraison'
+SELECT count(livraison.id) AS 'Nombre de commande en cours de livraison'
 FROM livraison
 WHERE livraison.date > NOW();
 
@@ -83,9 +83,9 @@ DELIMITER |
 
 CREATE PROCEDURE DélaiMoyLiv()
 BEGIN 
-	SELECT ROUND(AVG(DATEDIFF(livraison.date, date_facture))) AS 'Délai moyen dat_fac et dat_liv'
+	SELECT ROUND(AVG(DATEDIFF(livraison.date, date_facture))) AS 'Délai moyen date_facture et date_livraison'
 	FROM commande
-	JOIN livraison ON commande.id = livraison.commande_id
+	JOIN livraison ON commande.id = livraison.commande_id;
 END |
 
 DELIMITER ;
@@ -98,14 +98,14 @@ CALL DélaiMoyLiv();
 
 CREATE VIEW v_Pro_Fou
 AS
-SELECT produit.id,libelle_court,libelle_long,fournisseur.nom,produit.photo,prix_achat,prix_hors_taxe,categorie,rubrique_id,livraison_id,fournisseur_id,fournisseur.adresse,fournisseur.email,fournisseur.telephone
+SELECT produit.id,produit.libelle_court,produit.libelle_long,produit.photo,produit.prix_achat,produit.prix_hors_taxe,produit.rubrique_id,produit.fournisseur_id,fournisseur.nom,fournisseur.adresse,fournisseur.email,fournisseur.telephone
 FROM produit
 JOIN fournisseur ON produit.fournisseur_id = fournisseur.id;
 
--- Créez une vue correspondant à la jointure Produits - Catégorie/Sous catégorie
+-- Créez une vue correspondant à la jointure Produits - Rubrique/Sous rubrique
 
 CREATE VIEW v_Pro_Rub
 AS
-SELECT produit.id,libelle_court,libelle_long,produit.photo,prix_achat,prix_hors_taxe,categorie,produit.rubrique_id,livraison_id,fournisseur_id,rubrique.nom,rubrique.rubrique_id
+SELECT produit.id,produit.libelle_court,produit.libelle_long,produit.photo,produit.prix_achat,produit.prix_hors_taxe,produit.fournisseur_id,produit.rubrique_id,rubrique.nom
 FROM produit
-JOIN rubrique ON produit.rubrique_id = rubrique.id;
+JOIN rubrique ON rubrique.id = produit.rubrique_id;
