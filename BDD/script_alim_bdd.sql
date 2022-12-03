@@ -42,7 +42,7 @@ INSERT INTO client(categorie,adresse_livraison,cp_livraison,ville_livraison,adre
 ('Professionnel','3570 County Line Road', '33602', 'Tampa','2511 Mount Olive Road', '30501', 'Gainesville','Virement/Chèque',1.05,1.09,36925814701234,'Flamand','William', 'Mane 5'),
 ('Particulier','1 rue des tests', '12345', 'TEST','1 rue des tests', '12345', 'TEST', 'CB',NULL,'0',NULL,'Teste','Tesse',NULL);
 
-INSERT INTO user (client_id,email,roles,password) VALUES 
+INSERT INTO users (client_id,email,roles,password) VALUES 
 (NULL,'admin@admin.fr','["ROLE_ADMIN"]','$13$bQdLAkvQExnlgbF5alX2WOoIOMAF5o5Kjf8qUKUYda1eTHw9lZPWe'),
 (7,'test@test.fr', '["ROLE_USER"]','$13$bQdLAkvQExnlgbF5alX2WOoIOMAF5o5Kjf8qUKUYda1eTHw9lZPWe');
 
@@ -70,8 +70,8 @@ INSERT INTO fournisseur(nom,adresse,cp,ville,email,telephone) VALUES
 INSERT INTO produit(libelle_court, libelle_long, photo, prix_achat, prix_hors_taxe, rubrique_id, fournisseur_id)VALUES
 ('TBPro','the box pro','TBPro.jpg',36,46.4,24,3),
 ('HKA', 'HK Audio', 'HKA.jpg', 400,495.2,24,4),
-('FBTHX', 'FBT HIMaxX60', 'FBTHX.jpg',575,639.2, 24, 1 ),
-('SM58', 'Shure', 'SM58.jpg', 70, 78..4, 25 , 2),
+('FBTHX', 'FBT HIMaxX60', 'FBTHX.jpg',575,639.2, 24, 1),
+('SM58', 'Shure', 'SM58.jpg', 70, 78.4, 25 , 2),
 ('TTBone', 'the t.bone', 'TTBone.jpg', 20, 31.2, 25, 5),
 ('E835S', 'Senheiser', 'E835S.jpg', 60, 70.4, 25, 3),
 ('X2222USB', 'Behringer Xenyx', 'X2222USB.jpg', 150, 215.2,  26, 2),
@@ -91,9 +91,9 @@ INSERT INTO produit(libelle_court, libelle_long, photo, prix_achat, prix_hors_ta
 ('MH10', 'ESP LTD', 'MH10.jpg', 100, 191.2, 9,2),
 ('GL2NT', 'Harley Benton Guitarlele', 'GL2NT.jpg', 30, 47.2, 10, 5),
 ('CG851', 'Startone Pink', 'CG851.jpg', 22, 30.4, 10, 2),
-('GL1', 'Yamaha', 'GL1.jpg', 48, 68 'Guitares Classiques', 10 , 4),
+('GL1', 'Yamaha', 'GL1.jpg', 48, 68, 10 , 4),
 ('BT2E', 'Taylor Baby Mahogany', 'BT2E.jpg', 300, 399.2, 11,3),
-('LJ10', 'Furch', 'LJ10.jpg',700, 990, 'Guitares de Voyage', 11, 1),
+('LJ10', 'Furch', 'LJ10.jpg',700, 990, 11, 1),
 ('ME2BK', 'Lava Music', 'ME2BK.jpg',400, 479.2, 11,2),
 ('Yab1', 'Yamaha b1 PE', 'Yamaha b1 PE.jpg', 3075, 3690, 14, 1),
 ('Yab3', 'Yamaha b3 PE', 'Yamaha b3 PE.jgp', 4825, 5790, 14, 1),
@@ -123,7 +123,7 @@ INSERT INTO produit(libelle_court, libelle_long, photo, prix_achat, prix_hors_ta
 ('Martin Atomic','Martin Atomic 3000 LED','Martin.jpg',1900,2318.4,28,1),
 ('Varytec Colors','Varytec Colors SonicStrobe','Varytec.jpg',100,141.6, 28,1),
 ('Laserworld DS-1000RGB','Laserworld DS-1000RGB MK3','Laserworld.jpg',500,596,29,1),
-('ADj Stinger','ADJ Stinger II','ADj.jpg',150,172,'Lasers',29,1),
+('ADj Stinger','ADJ Stinger II','ADj.jpg',150,172,29,1),
 ('Laserworld PL','Laserworld PL-5000RGB MK2','Laserworld1.jpg',1900,2199.2,29,4),
 ('Gravity LTS', 'Gravity LTS 01 B Set','Gravity.jpg',40,61.6,30,4),
 ('Roadworx Electric','Roadworx Multi Electric Stand','Roadworx.jpg',200,231.2,30,4),
@@ -143,14 +143,14 @@ INSERT INTO produit(libelle_court, libelle_long, photo, prix_achat, prix_hors_ta
 
 
 INSERT INTO commande(date,adresse_livraison,cp_livraison,ville_livraison,adresse_facture,cp_facture,ville_facture,date_facture,total,client_id) VALUE
-(NOW(), '39193 Lulu Way Apt. 696', '80287', 'Baton Rouge', '39193 Lulu Way Apt. 696', '80287', 'Baton Rouge', '2022-05-17', NULL, 1),
+(NOW(), '39193 Lulu Way Apt. 696', '80287', 'Baton Rouge', '39193 Lulu Way Apt. 696', '80287', 'Baton Rouge', '2022-05-17', 12.45, 1),
 (NOW(), '1292 Waterview Lane', '88005', 'Las Cruces',  '2212 Neville Street', '80287', 'Terre Haute', '2022-05-26', NULL, 4),
 (NOW(), '3083 Norma Lane', '71201', 'Monroe', '3083 Norma Lane', '71201', 'Monroe', '2022-05-17', NULL,3),
 (NOW(), '4968 Marie Street', '21217', 'Baltimore', '4968 Marie Street', '21217', 'Baltimore', '2022-05-17', NULL,2),
 ('2022-04-03', '3570 County Line Road', '33602', 'Tampa', '2511 Mount Olive Road', '30501', 'Gainesville', '2022-06-23', NULL,6),
 ('2022-04-03', '1728 Meadowview Drive', '22821', 'Dayton', '1728 Meadowview Drive', '22821', 'Dayton', '2022-05-17', NULL,5);
 
-INSERT INTO detail_commande(commande_id,produit_id,quantite_article,prix_vente,prix_hors_taxe,tva_produit) VALUES
+INSERT INTO detail_commande(produit_id,commande_id,quantite_article,prix_vente,prix_hors_taxe,tva_produit) VALUES
 (4,4,8,98,90,8),
 (3,4,6,799,750,49),
 (8,4,2,444,400,44),
@@ -170,14 +170,14 @@ INSERT INTO detail_commande(commande_id,produit_id,quantite_article,prix_vente,p
 (31,5,3,10890,9075,1815);
 
 INSERT INTO livraison (commande_id,date,adresse,cp,ville) VALUES
-(4,NOW(),1,'39193 Lulu Way Apt. 696', '80287', 'Baton Rouge'),
-(6,NOW(),2,'1292 Waterview Lane','88005','Las Cruces'),
-(6,NOW(),3,'3083 Norma Lane', '71201', 'Monroe'),
-(16,NOW(),4,'4968 Marie Street', '21217', 'Baltimore'),
-(6,NOW(),5,'3570 County Line Road', '33602', 'Tampa'),
-(12,'2023-05-03',6,'1728 Meadowview Drive', '22821', 'Dayton');
+(1,NOW(),'39193 Lulu Way Apt. 696', '80287', 'Baton Rouge'),
+(2,NOW(),'1292 Waterview Lane','88005','Las Cruces'),
+(3,NOW(),'3083 Norma Lane', '71201', 'Monroe'),
+(4,NOW(),'4968 Marie Street', '21217', 'Baltimore'),
+(5,NOW(),'3570 County Line Road', '33602', 'Tampa'),
+(6,'2023-05-03','1728 Meadowview Drive', '22821', 'Dayton');
 
-INSERT INTO livraison_produit (produit_id,livraison_id,quantite_article_livre) VALUES 
+INSERT INTO livraison_produit (produit_id,livraison_id,quantite_produit_livre) VALUES 
 (4,4,8),
 (3,4,6),
 (8,4,2),
