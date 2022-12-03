@@ -10,9 +10,9 @@ CREATE TABLE client(
    adresse_livraison VARCHAR(255) NOT NULL ,
    cp_livraison VARCHAR(255) NOT NULL ,
    ville_livraison VARCHAR(255) NOT NULL ,
-   adresse_facturation VARCHAR(255) NOT NULL ,
-   cp_facturation VARCHAR(255) NOT NULL ,
-   ville_facturation VARCHAR(255) NOT NULL ,
+   adresse_facture VARCHAR(255) NOT NULL ,
+   cp_facture VARCHAR(255) NOT NULL ,
+   ville_facture VARCHAR(255) NOT NULL ,
    mode_paiement VARCHAR(255) NOT NULL ,
    reduction DECIMAL(5,2)  DEFAULT NULL ,
    coefficient DECIMAL(5,2) NOT NULL  ,
@@ -24,15 +24,14 @@ CREATE TABLE client(
 );
 CREATE INDEX numero_client ON client(id);
 
-CREATE TABLE user(
+CREATE TABLE users(
    id INT AUTO_INCREMENT NOT NULL,
    client_id INT,
    email VARCHAR(255) NOT NULL,
    roles LONGTEXT NOT NULL,
    password VARCHAR(255) NOT NULL,
-   id PRIMARY KEY(id),
-   FOREIGN KEY(client_id) REFERENCES Client(id)
-   FOREIGN KEY(email)
+   PRIMARY KEY(id),
+   FOREIGN KEY(client_id) REFERENCES client(id)
 );
 
 CREATE TABLE commercial(
@@ -48,13 +47,13 @@ CREATE TABLE commercial(
 );
 
 CREATE TABLE fournisseur(
-   id INT AUTO_INCREMENT NOT NULL ,
-   nom VARCHAR(255) NOT NULL ,
+   id INT AUTO_INCREMENT NOT NULL,
+   nom VARCHAR(255) NOT NULL,
    adresse varchar(255) NOT NULL,
    cp VARCHAR(255) NOT NULL,
    ville VARCHAR(255) NOT NULL,
    email varchar(255) NOT NULL,
-   telephone varchar(255) NOT NULL
+   telephone varchar(255) NOT NULL,
    PRIMARY KEY(id)
 );
 
@@ -94,22 +93,22 @@ CREATE TABLE rubrique(
    PRIMARY KEY(id),
    FOREIGN KEY(rubrique_id) REFERENCES rubrique(id)
 );
-CREATE INDEX rubrique ON rubrique(nom_rub);
+CREATE INDEX rubrique ON rubrique(nom);
 
 CREATE TABLE produit(
-   id INT AUTO_INCREMENT NOT NULL ,
-   libelle_court VARCHAR(255) NOT NULL ,
-   libelle_long VARCHAR(255) NOT NULL ,
-   photo VARCHAR(255) NOT NULL ,
-   prix_achat DECIMAL(19,4) NOT NULL ,
-   prix_hors_taxe DECIMAL(19,4) NOT NULL ,
-   rubrique_id INT NOT NULL ,
-   fournisseur_id INT NOT NULL ,
+   id INT AUTO_INCREMENT NOT NULL,
+   libelle_court VARCHAR(255) NOT NULL,
+   libelle_long VARCHAR(255) NOT NULL,
+   photo VARCHAR(255) NOT NULL,
+   prix_achat DECIMAL(19,4) NOT NULL,
+   prix_hors_taxe DECIMAL(19,4) NOT NULL,
+   rubrique_id INT NOT NULL,
+   fournisseur_id INT NOT NULL,
    PRIMARY KEY(id),
-   FOREIGN KEY(rubrique_id) REFERENCES Rubrique(id),
-   FOREIGN KEY(fournisseur_id) REFERENCES Fournisseur(id),
+   FOREIGN KEY(rubrique_id) REFERENCES rubrique(id),
+   FOREIGN KEY(fournisseur_id) REFERENCES fournisseur(id)
 );
-CREATE INDEX nom_produit ON Produit(libelle_court);
+CREATE INDEX nom_produit ON produit(libelle_court);
 
 
 CREATE TABLE livraison_produit(
