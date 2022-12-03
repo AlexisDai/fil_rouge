@@ -1214,12 +1214,12 @@ INSERT INTO produit(libelle_court, libelle_long, photo, prix_achat, prix_hors_ta
 
 
 INSERT INTO commande(date,adresse_livraison,cp_livraison,ville_livraison,adresse_facture,cp_facture,ville_facture,date_facture,total,client_id) VALUE
-(NOW(), '39193 Lulu Way Apt. 696', '80287', 'Baton Rouge', '39193 Lulu Way Apt. 696', '80287', 'Baton Rouge', '2022-05-17', 12.45, 1),
-(NOW(), '1292 Waterview Lane', '88005', 'Las Cruces',  '2212 Neville Street', '80287', 'Terre Haute', '2022-05-26', NULL, 4),
-(NOW(), '3083 Norma Lane', '71201', 'Monroe', '3083 Norma Lane', '71201', 'Monroe', '2022-05-17', NULL,3),
-(NOW(), '4968 Marie Street', '21217', 'Baltimore', '4968 Marie Street', '21217', 'Baltimore', '2022-05-17', NULL,2),
-('2022-04-03', '3570 County Line Road', '33602', 'Tampa', '2511 Mount Olive Road', '30501', 'Gainesville', '2022-06-23', NULL,6),
-('2022-04-03', '1728 Meadowview Drive', '22821', 'Dayton', '1728 Meadowview Drive', '22821', 'Dayton', '2022-05-17', NULL,5);
+('2022-02-17', '39193 Lulu Way Apt. 696', '80287', 'Baton Rouge', '39193 Lulu Way Apt. 696', '80287', 'Baton Rouge', '2022-05-17', 12.45, 1),
+('2022-03-17', '1292 Waterview Lane', '88005', 'Las Cruces',  '2212 Neville Street', '80287', 'Terre Haute', '2022-05-26', NULL, 4),
+('2022-04-17', '3083 Norma Lane', '71201', 'Monroe', '3083 Norma Lane', '71201', 'Monroe', '2022-05-17', NULL,3),
+('2022-05-17', '4968 Marie Street', '21217', 'Baltimore', '4968 Marie Street', '21217', 'Baltimore', '2022-05-17', NULL,2),
+('2022-06-03', '3570 County Line Road', '33602', 'Tampa', '2511 Mount Olive Road', '30501', 'Gainesville', '2022-06-23', NULL,6),
+('2022-07-03', '1728 Meadowview Drive', '22821', 'Dayton', '1728 Meadowview Drive', '22821', 'Dayton', '2022-05-17', NULL,5);
 
 INSERT INTO detail_commande(produit_id,commande_id,quantite_article,prix_vente,prix_hors_taxe,tva_produit) VALUES
 (4,4,8,98,90,8),
