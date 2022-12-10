@@ -1,4 +1,4 @@
-DROP DATABASE if EXISTS BlueVillage;
+DROP DATABASE IF EXISTS BlueVillage;
 
 CREATE DATABASE BlueVillage;
 
@@ -67,7 +67,7 @@ CREATE TABLE commande(
    cp_facture VARCHAR(255) NOT NULL,
    ville_facture VARCHAR(255) NOT NULL,
    date_facture DATE NOT NULL,
-   total DECIMAL(19,4) NOT NULL ,
+   total DECIMAL(19,4),
    client_id INT NOT NULL,
    PRIMARY KEY(id),
    FOREIGN KEY(client_id) REFERENCES client(id)
@@ -98,7 +98,7 @@ CREATE INDEX rubrique ON rubrique(nom);
 CREATE TABLE produit(
    id INT AUTO_INCREMENT NOT NULL,
    libelle_court VARCHAR(255) NOT NULL,
-   libelle_long VARCHAR(255) NOT NULL,
+   libelle_long VARCHAR(2500) NOT NULL,
    photo VARCHAR(255) NOT NULL,
    prix_achat DECIMAL(19,4) NOT NULL,
    prix_hors_taxe DECIMAL(19,4) NOT NULL,
@@ -137,7 +137,7 @@ CREATE TABLE detail_commande(
    quantite_article INT NOT NULL ,
    prix_vente DECIMAL(19,4) NOT NULL ,
    prix_hors_taxe DECIMAL(19,4) NOT NULL ,
-   tva_produit DECIMAL(5,2)  NOT NULL ,
+   tva_produit DECIMAL(6,2)  NOT NULL ,
    PRIMARY KEY(id),
    FOREIGN KEY(produit_id) REFERENCES produit(id),
    FOREIGN KEY(commande_id) REFERENCES commande(id)
