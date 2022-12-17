@@ -23,8 +23,15 @@ function App() {
 
   /* Récupération de tous les produits que l'on met dans la constante "data" avec setData*/
   useEffect(() => {
-      fetchSync('https://alexis.amorce.org/api/produits', 'get').then( (data) => setData(data) );
+    fetchSync('http://127.0.0.1:8000/api/produits', 'GET')
+    .then( (data) => setData(data));
+
   }, [])
+  /* On met à jour la liste des produits à chaque modification */
+  const handleChange = () => {
+    fetchSync('http://127.0.0.1:8000/api/produits', 'GET')
+    .then( (data) => setData(data));
+  }
 
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/caperyear`, { method: 'GET' })
@@ -62,16 +69,6 @@ function App() {
     .then( data => setCAPerClients(data));
   },[])
 
-  /* On met à jour la liste des produits à chaque modification */
-  const handleChange = () => {
-      fetchSync('https://alexis.amorce.org/api/produits', 'get').then( (data) => setData(data));
-  }
-
-  // const handleChangeStats = () => {
-  //   fetch(`http://127.0.0.1:8000/dashboard`, { method: 'GET' })
-  //   .then( response => response.json())
-  //   .then( data => setDataDash(data));
-  // }
 
   return (
 

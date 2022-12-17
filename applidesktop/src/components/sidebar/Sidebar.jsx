@@ -24,7 +24,7 @@ const Sidebar = () => {
                     <Link to="/dashboard" style={{ textDecoration: "none" }}>
                     <li>
                     <DashboardIcon className="icon"/>
-                        <span>Tableau de bord</span>
+                        <span>Top 10</span>
                     </li>
                     </Link>
 
