@@ -1221,7 +1221,7 @@ INSERT INTO commande(date,adresse_livraison,cp_livraison,ville_livraison,adresse
 ('2022-06-03', '3570 County Line Road', '33602', 'Tampa', '2511 Mount Olive Road', '30501', 'Gainesville', '2022-06-23', NULL,6),
 ('2022-07-03', '1728 Meadowview Drive', '22821', 'Dayton', '1728 Meadowview Drive', '22821', 'Dayton', '2022-05-17', NULL,5);
 
-INSERT INTO detail_commande(produit_id,commande_id,quantite_article,prix_vente,prix_hors_taxe,tva_produit) VALUES
+INSERT INTO detail_commande(produit_id,commande_id,quantite_article,prix_vente,prix_hors_taxe_total,tva_produit) VALUES
 (4,4,8,98,90,8),
 (3,4,6,799,750,49),
 (8,4,2,444,400,44),

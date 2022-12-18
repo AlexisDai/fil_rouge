@@ -23,48 +23,48 @@ function App() {
 
   /* Récupération de tous les produits que l'on met dans la constante "data" avec setData*/
   useEffect(() => {
-      fetchSync('https://alexis.amorce.org/api/produits', 'get').then( (data) => setData(data) );
+      fetchSync('http://alexis.amorce.org/api/produits', 'get').then( (data) => setData(data) );
   }, [])
 
   useEffect(() => {
-    fetch(`https://alexis.amorce.org/caperyear`, { method: 'GET' })
+    fetch(`http://alexis.amorce.org/caperyear`, { method: 'GET' })
     .then( response => response.json())
     .then( data => setCAPerYear(data));
   },[])
 
   useEffect(() => {
-    fetch(`https://alexis.amorce.org/caperfou`, { method: 'GET' })
+    fetch(`http://alexis.amorce.org/caperfou`, { method: 'GET' })
     .then( response => response.json())
     .then( data => setCAPerFou(data));
   },[])
 
   useEffect(() => {
-    fetch(`https://alexis.amorce.org/top10commande`, { method: 'GET' })
+    fetch(`http://alexis.amorce.org/top10commande`, { method: 'GET' })
     .then( response => response.json())
     .then( data => setTop10Commande(data));
   },[])
 
   useEffect(() => {
-    fetch(`https://alexis.amorce.org/top10remu`, { method: 'GET' })
+    fetch(`http://alexis.amorce.org/top10remu`, { method: 'GET' })
     .then( response => response.json())
     .then( data => setTop10Remu(data));
   },[])
 
   useEffect(() => {
-    fetch(`https://alexis.amorce.org/top10clients`, { method: 'GET' })
+    fetch(`http://alexis.amorce.org/top10clients`, { method: 'GET' })
     .then( response => response.json())
     .then( data => setTop10Clients(data));
   },[])
   
   useEffect(() => {
-    fetch(`https://alexis.amorce.org/caperclients`, { method: 'GET' })
+    fetch(`http://alexis.amorce.org/caperclients`, { method: 'GET' })
     .then( response => response.json())
     .then( data => setCAPerClients(data));
   },[])
 
   /* On met à jour la liste des produits à chaque modification */
   const handleChange = () => {
-      fetchSync('https://alexis.amorce.org/api/produits', 'get').then( (data) => setData(data));
+      fetchSync('http://alexis.amorce.org/api/produits', 'get').then( (data) => setData(data));
   }
 
   // const handleChangeStats = () => {

@@ -14,7 +14,7 @@ const Widget = ({ type }) => {
     const [NbCommandesLivraison, setNbCommandesLivraison] = useState([])
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/nbcommandelivraison`, { method: 'GET' })
+        fetch(`http://alexis.amorce.org/nbcommandelivraison`, { method: 'GET' })
             .then(response => response.json())
             .then(response => setNbCommandesLivraison(response));
     }, [])

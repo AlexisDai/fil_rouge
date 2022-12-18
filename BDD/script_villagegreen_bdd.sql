@@ -136,7 +136,7 @@ CREATE TABLE detail_commande(
    produit_id INT NOT NULL ,
    quantite_article INT NOT NULL ,
    prix_vente DECIMAL(19,4) NOT NULL ,
-   prix_hors_taxe DECIMAL(19,4) NOT NULL ,
+   prix_hors_taxe_total DECIMAL(19,4) NOT NULL ,
    tva_produit DECIMAL(6,2)  NOT NULL ,
    PRIMARY KEY(id),
    FOREIGN KEY(produit_id) REFERENCES produit(id),
