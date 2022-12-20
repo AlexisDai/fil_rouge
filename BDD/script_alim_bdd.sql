@@ -42,7 +42,7 @@ INSERT INTO client(categorie,adresse_livraison,cp_livraison,ville_livraison,adre
 ('Professionnel','3570 County Line Road', '33602', 'Tampa','2511 Mount Olive Road', '30501', 'Gainesville','Virement/Chèque',1.05,1.09,36925814701234,'Flamand','William', 'Mane 5'),
 ('Particulier','1 rue des tests', '12345', 'TEST','1 rue des tests', '12345', 'TEST', 'CB',NULL,'0',NULL,'Teste','Tesse',NULL);
 
-INSERT INTO users (client_id,email,roles,password) VALUES 
+INSERT INTO user (client_id,email,roles,password) VALUES 
 (NULL,'admin@admin.fr','["ROLE_ADMIN"]','$13$bQdLAkvQExnlgbF5alX2WOoIOMAF5o5Kjf8qUKUYda1eTHw9lZPWe'),
 (7,'test@test.fr', '["ROLE_USER"]','$13$bQdLAkvQExnlgbF5alX2WOoIOMAF5o5Kjf8qUKUYda1eTHw9lZPWe');
 

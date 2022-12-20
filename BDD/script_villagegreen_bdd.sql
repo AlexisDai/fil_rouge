@@ -24,7 +24,7 @@ CREATE TABLE client(
 );
 CREATE INDEX numero_client ON client(id);
 
-CREATE TABLE users(
+CREATE TABLE user(
    id INT AUTO_INCREMENT NOT NULL,
    client_id INT,
    email VARCHAR(255) NOT NULL,
